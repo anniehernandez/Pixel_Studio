@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PI_PixelStudio
+{
+    public partial class CameraUserCtrl : UserControl
+    {
+        public CameraUserCtrl()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Open_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
