@@ -1,25 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\luish\\source\\repos\\PI_PixelStudio\\",
+  "WorkspaceRootPath": "C:\\Users\\luish\\source\\repos\\Pixel_Studio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|c:\\users\\luish\\source\\repos\\pi_pixelstudio\\pi_pixelstudio\\imageediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|solutionrelative:pi_pixelstudio\\imageediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|c:\\users\\luish\\source\\repos\\pi_pixelstudio\\pi_pixelstudio\\videoediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|c:\\users\\luish\\source\\repos\\pixel_studio\\pi_pixelstudio\\videoediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|solutionrelative:pi_pixelstudio\\videoediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|c:\\users\\luish\\source\\repos\\pi_pixelstudio\\pi_pixelstudio\\videoediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|c:\\users\\luish\\source\\repos\\pixel_studio\\pi_pixelstudio\\imageediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|solutionrelative:pi_pixelstudio\\imageediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|C:\\Users\\luish\\source\\repos\\Pixel_Studio\\pi_pixelstudio\\videoediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|solutionrelative:pi_pixelstudio\\videoediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|c:\\users\\luish\\source\\repos\\pi_pixelstudio\\pi_pixelstudio\\imageediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|C:\\Users\\luish\\source\\repos\\Pixel_Studio\\pi_pixelstudio\\imageediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|solutionrelative:pi_pixelstudio\\imageediting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|c:\\users\\luish\\source\\repos\\pi_pixelstudio\\pi_pixelstudio\\filtersusercrtl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|c:\\users\\luish\\source\\repos\\pixel_studio\\pi_pixelstudio\\filtersusercrtl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{754DA8BE-26EF-4E0A-8D2D-01F5EEEB9813}|PI_PixelStudio\\PI_PixelStudio.csproj|solutionrelative:pi_pixelstudio\\filtersusercrtl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,28 +30,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 216,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "ImageEditing.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\luish\\source\\repos\\PI_PixelStudio\\PI_PixelStudio\\ImageEditing.cs",
+              "DocumentMoniker": "C:\\Users\\luish\\source\\repos\\Pixel_Studio\\PI_PixelStudio\\ImageEditing.cs",
               "RelativeDocumentMoniker": "PI_PixelStudio\\ImageEditing.cs",
               "ToolTip": "C:\\Users\\luish\\source\\repos\\PI_PixelStudio\\PI_PixelStudio\\ImageEditing.cs [Design]",
-              "RelativeToolTip": "PI_PixelStudio\\ImageEditing.cs [Design]",
+              "RelativeToolTip": "..\\PI_PixelStudio\\PI_PixelStudio\\ImageEditing.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-14T23:40:58.202Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "VideoEditing.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\luish\\source\\repos\\PI_PixelStudio\\PI_PixelStudio\\VideoEditing.cs",
+              "DocumentMoniker": "C:\\Users\\luish\\source\\repos\\Pixel_Studio\\PI_PixelStudio\\VideoEditing.cs",
               "RelativeDocumentMoniker": "PI_PixelStudio\\VideoEditing.cs",
-              "ToolTip": "C:\\Users\\luish\\source\\repos\\PI_PixelStudio\\PI_PixelStudio\\VideoEditing.cs [Design]",
+              "ToolTip": "C:\\Users\\luish\\source\\repos\\Pixel_Studio\\PI_PixelStudio\\VideoEditing.cs [Design]",
               "RelativeToolTip": "PI_PixelStudio\\VideoEditing.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-14T23:51:24.734Z",
@@ -60,42 +59,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "VideoEditing.cs",
-              "DocumentMoniker": "C:\\Users\\luish\\source\\repos\\PI_PixelStudio\\PI_PixelStudio\\VideoEditing.cs",
+              "DocumentMoniker": "C:\\Users\\luish\\source\\repos\\Pixel_Studio\\PI_PixelStudio\\VideoEditing.cs",
               "RelativeDocumentMoniker": "PI_PixelStudio\\VideoEditing.cs",
-              "ToolTip": "C:\\Users\\luish\\source\\repos\\PI_PixelStudio\\PI_PixelStudio\\VideoEditing.cs",
+              "ToolTip": "C:\\Users\\luish\\source\\repos\\Pixel_Studio\\PI_PixelStudio\\VideoEditing.cs",
               "RelativeToolTip": "PI_PixelStudio\\VideoEditing.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAYwBYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-15T00:10:22.685Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ImageEditing.cs",
-              "DocumentMoniker": "C:\\Users\\luish\\source\\repos\\PI_PixelStudio\\PI_PixelStudio\\ImageEditing.cs",
+              "DocumentMoniker": "C:\\Users\\luish\\source\\repos\\Pixel_Studio\\PI_PixelStudio\\ImageEditing.cs",
               "RelativeDocumentMoniker": "PI_PixelStudio\\ImageEditing.cs",
-              "ToolTip": "C:\\Users\\luish\\source\\repos\\PI_PixelStudio\\PI_PixelStudio\\ImageEditing.cs",
+              "ToolTip": "C:\\Users\\luish\\source\\repos\\Pixel_Studio\\PI_PixelStudio\\ImageEditing.cs",
               "RelativeToolTip": "PI_PixelStudio\\ImageEditing.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAswCYAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAswB8AAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T23:41:14.542Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T23:41:14.542Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "FiltersUserCrtl.cs",
-              "DocumentMoniker": "C:\\Users\\luish\\source\\repos\\PI_PixelStudio\\PI_PixelStudio\\FiltersUserCrtl.cs",
+              "DocumentMoniker": "C:\\Users\\luish\\source\\repos\\Pixel_Studio\\PI_PixelStudio\\FiltersUserCrtl.cs",
               "RelativeDocumentMoniker": "PI_PixelStudio\\FiltersUserCrtl.cs",
-              "ToolTip": "C:\\Users\\luish\\source\\repos\\PI_PixelStudio\\PI_PixelStudio\\FiltersUserCrtl.cs",
+              "ToolTip": "C:\\Users\\luish\\source\\repos\\Pixel_Studio\\PI_PixelStudio\\FiltersUserCrtl.cs",
               "RelativeToolTip": "PI_PixelStudio\\FiltersUserCrtl.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwC8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-14T19:00:50.625Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-14T19:00:50.625Z"
             }
           ]
         }

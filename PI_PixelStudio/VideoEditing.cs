@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using PI_PixelStudio.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,13 +25,13 @@ namespace PI_PixelStudio
         {
             if (play == true)
             {
-                Play_Pause.Image = Image.FromFile("C://Users//luish//source//repos//PI_PixelStudio//PI_PixelStudio//Resources//pause.png");
+                Play_Pause.Image = Image.FromFile("C://Users//luish//source//repos//Pixel_Studio//PI_PixelStudio//Resources//pause.png");
                 VideoDisplay.Ctlcontrols.play();
                 play = false;
             }
             else
             {
-                Play_Pause.Image = Image.FromFile("C://Users//luish//source//repos//PI_PixelStudio//PI_PixelStudio//Resources//play.png");
+                Play_Pause.Image = Image.FromFile("C://Users//luish//source//repos//Pixel_Studio//PI_PixelStudio//Resources//play.png");
                 VideoDisplay.Ctlcontrols.pause();
                 play = true;
             }
