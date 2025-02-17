@@ -1,10 +1,13 @@
-"# Ignore build outputs" 
-"[Bb]in/" 
-"[Oo]bj/" 
-"*.user" 
-"*.suo" 
-"*.cache" 
-"packages/" 
-".vs/" 
-".idea/" 
-"*.sln.im" 
+# Ignore Visual Studio files
+.vs/
+*.suo
+*.user
+*.db
+
+# Ignore build files
+bin/
+obj/
+*.pdb
+*.exe
+*.dll
+*.cache
