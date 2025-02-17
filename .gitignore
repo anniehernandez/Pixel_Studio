@@ -1,16 +1,13 @@
-# Ignore build outputs
-[Bb]in/
-[Oo]bj/
-
-# Ignore user-specific files
-*.user
-*.suo
-*.cache
-
-# Ignore NuGet packages
-packages/
-
-# Ignore IDE-specific files
+# Ignore Visual Studio files
 .vs/
-.idea/
-*.sln.im
+*.suo
+*.user
+*.db
+
+# Ignore build files
+bin/
+obj/
+*.pdb
+*.exe
+*.dll
+*.cache
