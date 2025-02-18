@@ -12,17 +12,20 @@ namespace PI_PixelStudio
 {
     public partial class ImageEditing : UserControl
     {
-        public ImageEditing()
+        private FiltersUserCrtl filtersCtrl;
+        public Image originalImage;
+
+        public ImageEditing(FiltersUserCrtl filtersCtrl)
         {
+            this.filtersCtrl = filtersCtrl;
             InitializeComponent();
         }
-
         private void Open_Click(object sender, EventArgs e)
         {
             OpenFileDialog chooseFile = new OpenFileDialog();
 
             chooseFile.Filter = "Image Files| *.jpg; *.jpeg; *.png; *.bmp; *.gif";//Filter only image formats
-            chooseFile.Title = "Select an Image";
+            chooseFile.Title = "Select Media Element";
 
             if (chooseFile.ShowDialog() == DialogResult.OK)
             {
@@ -32,12 +35,19 @@ namespace PI_PixelStudio
                 if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png" || fileExtension == ".bmp" || fileExtension == ".gif")
                 {
                     ImageDisplay.Image = Image.FromFile(filePath);
+
+                    originalImage = ImageDisplay.Image;
+                    Bitmap img = new Bitmap(originalImage);
+
+                    this.filtersCtrl.RGBHistorgram_Start(img);
                 }
                 else
                 {
-                    MessageBox.Show("Ups! Unsuported File format! :(", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ups! Unsupported file format! :(", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
             }
         }
+
     }
 }

@@ -4,6 +4,7 @@ namespace PI_PixelStudio{
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragWindowPoint;
+        private FiltersUserCrtl currentFiltersControl;
         public PixelStudio()
         {
             InitializeComponent();
@@ -69,22 +70,10 @@ namespace PI_PixelStudio{
         }
 
         //MENU BUTTONS
-        private void EffectsButton_Click(object sender, EventArgs e)
-        {
-            var LoadEffects = new FiltersUserCrtl();
-            LoadUserCtrl(LoadEffects);//Load Respective Panel (In this case The Effects UserCtrl/Panel idk same shit (well not but u know what i mean))
-            LoadEffects.LoadSection(1);
-
-            ButtonActive.Visible = true;
-            ButtonActive.Height = EffectsButton.Height;
-            ButtonActive.Top = EffectsButton.Top;
-            ButtonActive.Left = EffectsButton.Left;
-        }
         private void FiltersButton_Click(object sender, EventArgs e)
         {
-            var LoadFilters = new FiltersUserCrtl();
-            LoadUserCtrl(LoadFilters);//Load Respective Panel (In this case The Effects UserCtrl/Panel idk same shit (well not but u know what i mean))
-            LoadFilters.LoadSection(0);
+            currentFiltersControl = new FiltersUserCrtl();
+            LoadUserCtrl(currentFiltersControl);//Load Respective Panel (In this case The Effects UserCtrl/Panel idk same shit (well not but u know what i mean))
 
             ButtonActive.Visible = true;
             ButtonActive.Height = FiltersButton.Height;

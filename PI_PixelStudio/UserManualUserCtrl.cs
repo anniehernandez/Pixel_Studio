@@ -70,23 +70,5 @@ namespace PI_PixelStudio
                 Bold(ContentRichBox, "\r\n3⭐"); Regular(ContentRichBox, "Main Panel: This Panel will cointain the actual workspace of the application.");
         }
 
-        private void EffectsItem_Click(object sender, EventArgs e)
-        {
-            SectionNameLabel.Text = "Effects";
-
-        }
-
-        private void FiltersItem_Click(object sender, EventArgs e)
-        {
-            SectionNameLabel.Text = "Filters";
-
-        }
-
-        private void CameraItem_Click(object sender, EventArgs e)
-        {
-            SectionNameLabel.Text = "Camera";
-
-        }
-
     }
 }

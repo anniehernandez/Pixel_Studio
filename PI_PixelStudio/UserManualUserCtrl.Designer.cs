@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             UserManualMenu = new MenuStrip();
-            menuToolStripMenuItem = new ToolStripMenuItem();
-            effectsToolStripMenuItem = new ToolStripMenuItem();
-            filtersToolStripMenuItem = new ToolStripMenuItem();
-            cameraToolStripMenuItem = new ToolStripMenuItem();
+            MenuStrip = new ToolStripMenuItem();
+            ImageStrip = new ToolStripMenuItem();
+            VideoStrip = new ToolStripMenuItem();
+            CameraStrip = new ToolStripMenuItem();
             UserManualInfo = new Panel();
             SectionPicture = new PictureBox();
             Intro = new TextBox();
             ContentRichBox = new RichTextBox();
             SectionNameLabel = new Label();
+            EffectsFiltersStrip = new ToolStripMenuItem();
+            MoreStrip = new ToolStripMenuItem();
             UserManualMenu.SuspendLayout();
             UserManualInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)SectionPicture).BeginInit();
@@ -47,46 +49,43 @@
             // 
             UserManualMenu.BackColor = Color.FromArgb(36, 41, 62);
             UserManualMenu.Font = new Font("Yu Gothic UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UserManualMenu.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem, effectsToolStripMenuItem, filtersToolStripMenuItem, cameraToolStripMenuItem });
+            UserManualMenu.Items.AddRange(new ToolStripItem[] { MenuStrip, EffectsFiltersStrip, ImageStrip, VideoStrip, CameraStrip, MoreStrip });
             UserManualMenu.Location = new Point(0, 0);
             UserManualMenu.Name = "UserManualMenu";
             UserManualMenu.Size = new Size(1020, 28);
             UserManualMenu.TabIndex = 4;
             UserManualMenu.Text = "UserManualMenu";
             // 
-            // menuToolStripMenuItem
+            // MenuStrip
             // 
-            menuToolStripMenuItem.Checked = true;
-            menuToolStripMenuItem.CheckState = CheckState.Checked;
-            menuToolStripMenuItem.ForeColor = Color.White;
-            menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(58, 24);
-            menuToolStripMenuItem.Text = "Menu";
-            menuToolStripMenuItem.Click += MenuItem_Click;
+            MenuStrip.Checked = true;
+            MenuStrip.CheckState = CheckState.Checked;
+            MenuStrip.ForeColor = Color.White;
+            MenuStrip.Name = "MenuStrip";
+            MenuStrip.Size = new Size(61, 24);
+            MenuStrip.Text = "Menu";
+            MenuStrip.Click += MenuItem_Click;
             // 
-            // effectsToolStripMenuItem
+            // ImageStrip
             // 
-            effectsToolStripMenuItem.ForeColor = Color.White;
-            effectsToolStripMenuItem.Name = "effectsToolStripMenuItem";
-            effectsToolStripMenuItem.Size = new Size(64, 24);
-            effectsToolStripMenuItem.Text = "Effects";
-            effectsToolStripMenuItem.Click += EffectsItem_Click;
+            ImageStrip.ForeColor = Color.White;
+            ImageStrip.Name = "ImageStrip";
+            ImageStrip.Size = new Size(63, 24);
+            ImageStrip.Text = "Image";
             // 
-            // filtersToolStripMenuItem
+            // VideoStrip
             // 
-            filtersToolStripMenuItem.ForeColor = Color.White;
-            filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
-            filtersToolStripMenuItem.Size = new Size(60, 24);
-            filtersToolStripMenuItem.Text = "Filters";
-            filtersToolStripMenuItem.Click += FiltersItem_Click;
+            VideoStrip.ForeColor = Color.White;
+            VideoStrip.Name = "VideoStrip";
+            VideoStrip.Size = new Size(61, 24);
+            VideoStrip.Text = "Video";
             // 
-            // cameraToolStripMenuItem
+            // CameraStrip
             // 
-            cameraToolStripMenuItem.ForeColor = Color.White;
-            cameraToolStripMenuItem.Name = "cameraToolStripMenuItem";
-            cameraToolStripMenuItem.Size = new Size(72, 24);
-            cameraToolStripMenuItem.Text = "Camera";
-            cameraToolStripMenuItem.Click += CameraItem_Click;
+            CameraStrip.ForeColor = Color.White;
+            CameraStrip.Name = "CameraStrip";
+            CameraStrip.Size = new Size(73, 24);
+            CameraStrip.Text = "Camera";
             // 
             // UserManualInfo
             // 
@@ -149,6 +148,20 @@
             SectionNameLabel.TabIndex = 2;
             SectionNameLabel.Text = "Section Name";
             // 
+            // EffectsFiltersStrip
+            // 
+            EffectsFiltersStrip.ForeColor = Color.White;
+            EffectsFiltersStrip.Name = "EffectsFiltersStrip";
+            EffectsFiltersStrip.Size = new Size(120, 24);
+            EffectsFiltersStrip.Text = "Effects / Filters";
+            // 
+            // MoreStrip
+            // 
+            MoreStrip.ForeColor = Color.White;
+            MoreStrip.Name = "MoreStrip";
+            MoreStrip.Size = new Size(58, 24);
+            MoreStrip.Text = "More";
+            // 
             // UserManualUserCtrl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -170,14 +183,16 @@
         #endregion
 
         private MenuStrip UserManualMenu;
-        private ToolStripMenuItem menuToolStripMenuItem;
-        private ToolStripMenuItem effectsToolStripMenuItem;
-        private ToolStripMenuItem filtersToolStripMenuItem;
-        private ToolStripMenuItem cameraToolStripMenuItem;
+        private ToolStripMenuItem MenuStrip;
+        private ToolStripMenuItem ImageStrip;
+        private ToolStripMenuItem VideoStrip;
+        private ToolStripMenuItem CameraStrip;
         private Panel UserManualInfo;
         private Label SectionNameLabel;
         private RichTextBox ContentRichBox;
         private PictureBox SectionPicture;
         private TextBox Intro;
+        private ToolStripMenuItem EffectsFiltersStrip;
+        private ToolStripMenuItem MoreStrip;
     }
 }

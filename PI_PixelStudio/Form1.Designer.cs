@@ -35,7 +35,6 @@ namespace PI_PixelStudio
             ButtonActive = new FlowLayoutPanel();
             CameraButton = new Button();
             FiltersButton = new Button();
-            EffectsButton = new Button();
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
             NavigationPanel = new Panel();
@@ -74,7 +73,6 @@ namespace PI_PixelStudio
             panel1.Controls.Add(ButtonActive);
             panel1.Controls.Add(CameraButton);
             panel1.Controls.Add(FiltersButton);
-            panel1.Controls.Add(EffectsButton);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -87,7 +85,7 @@ namespace PI_PixelStudio
             ButtonActive.BackColor = Color.FromArgb(113, 109, 214);
             ButtonActive.Location = new Point(0, 160);
             ButtonActive.Name = "ButtonActive";
-            ButtonActive.Size = new Size(7, 107);
+            ButtonActive.Size = new Size(7, 73);
             ButtonActive.TabIndex = 1;
             ButtonActive.Visible = false;
             // 
@@ -100,7 +98,7 @@ namespace PI_PixelStudio
             CameraButton.ForeColor = Color.White;
             CameraButton.Image = Properties.Resources.mdi_camera;
             CameraButton.ImageAlign = ContentAlignment.TopRight;
-            CameraButton.Location = new Point(0, 233);
+            CameraButton.Location = new Point(0, 197);
             CameraButton.Name = "CameraButton";
             CameraButton.Padding = new Padding(0, 0, 10, 0);
             CameraButton.Size = new Size(200, 36);
@@ -118,7 +116,7 @@ namespace PI_PixelStudio
             FiltersButton.ForeColor = Color.White;
             FiltersButton.Image = Properties.Resources.streamline_magic_wand_2_solid;
             FiltersButton.ImageAlign = ContentAlignment.TopRight;
-            FiltersButton.Location = new Point(0, 197);
+            FiltersButton.Location = new Point(0, 161);
             FiltersButton.Name = "FiltersButton";
             FiltersButton.Padding = new Padding(0, 0, 10, 0);
             FiltersButton.Size = new Size(200, 36);
@@ -126,24 +124,6 @@ namespace PI_PixelStudio
             FiltersButton.Text = "Filters";
             FiltersButton.UseVisualStyleBackColor = true;
             FiltersButton.Click += FiltersButton_Click;
-            // 
-            // EffectsButton
-            // 
-            EffectsButton.Dock = DockStyle.Top;
-            EffectsButton.FlatAppearance.BorderSize = 0;
-            EffectsButton.FlatStyle = FlatStyle.Flat;
-            EffectsButton.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            EffectsButton.ForeColor = Color.White;
-            EffectsButton.Image = Properties.Resources.solar_star_fall_bold;
-            EffectsButton.ImageAlign = ContentAlignment.TopRight;
-            EffectsButton.Location = new Point(0, 161);
-            EffectsButton.Name = "EffectsButton";
-            EffectsButton.Padding = new Padding(0, 0, 10, 0);
-            EffectsButton.Size = new Size(200, 36);
-            EffectsButton.TabIndex = 1;
-            EffectsButton.Text = "Effects";
-            EffectsButton.UseVisualStyleBackColor = true;
-            EffectsButton.Click += EffectsButton_Click;
             // 
             // panel2
             // 
@@ -328,7 +308,6 @@ namespace PI_PixelStudio
         private Panel panel2;
         private PictureBox pictureBox2;
         private Panel NavigationPanel;
-        private Button EffectsButton;
         private Button CameraButton;
         private Button FiltersButton;
         private Button Minimize;
