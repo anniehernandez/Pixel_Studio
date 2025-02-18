@@ -26,7 +26,7 @@ namespace PI_PixelStudio
         {
             OpenFileDialog chooseFile = new OpenFileDialog();
 
-            chooseFile.Filter = "Image Files| *.jpg; *.jpeg; *.png; *.bmp; *.gif| Video Files| *.mp4; *.avi; *.wmv; *.mov";//Filter only image formats
+            chooseFile.Filter = "Image Files| *.jpg; *.jpeg; *.png; *.bmp; *.gif";//Filter only image formats
             chooseFile.Title = "Select Media Element";
 
             if (chooseFile.ShowDialog() == DialogResult.OK)
@@ -43,10 +43,6 @@ namespace PI_PixelStudio
                     Bitmap img = new Bitmap(originalImage);
 
                     RGBHistorgram_Start(img);
-                }
-                else if (fileExtension == ".mp4" || fileExtension == ".avi" || fileExtension == ".wmv" || fileExtension == ".mov")
-                {
-
                 }
                 else
                 {
@@ -136,7 +132,6 @@ namespace PI_PixelStudio
             g.DrawLine(penAxis, 4, 126, 126, 126);
             g.DrawLine(penAxis, 4, 126, 4, 4);
         }
-
         private void Hystogram2_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -145,7 +140,6 @@ namespace PI_PixelStudio
             g.DrawLine(penAxis, 4, 126, 126, 126);
             g.DrawLine(penAxis, 4, 126, 4, 4);
         }
-
         private void Hystogram3_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -154,7 +148,6 @@ namespace PI_PixelStudio
             g.DrawLine(penAxis, 4, 126, 126, 126);
             g.DrawLine(penAxis, 4, 126, 4, 4);
         }
-
         private void Hystogram4_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
