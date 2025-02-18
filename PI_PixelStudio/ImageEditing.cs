@@ -34,9 +34,9 @@ namespace PI_PixelStudio
 
                 if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png" || fileExtension == ".bmp" || fileExtension == ".gif")
                 {
-                    ImageDisplay.Image = Image.FromFile(filePath);
+                    Display.Image = Image.FromFile(filePath);
 
-                    originalImage = ImageDisplay.Image;
+                    originalImage = Display.Image;
                     Bitmap img = new Bitmap(originalImage);
 
                     this.filtersCtrl.RGBHistorgram_Start(img);

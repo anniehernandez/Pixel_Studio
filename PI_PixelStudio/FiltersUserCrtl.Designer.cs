@@ -31,9 +31,9 @@
             panel2 = new Panel();
             TitlePanel = new Panel();
             SectionLabel = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            panel1 = new Panel();
-            pictureBox1 = new PictureBox();
+            FiltersFlowPanel = new FlowLayoutPanel();
+            FilterPanel = new Panel();
+            FIlterPicture = new PictureBox();
             FilterName = new Label();
             Hystogram4 = new Panel();
             Hystogram_B = new PictureBox();
@@ -62,9 +62,9 @@
             videoToolStripMenuItem = new ToolStripMenuItem();
             panel2.SuspendLayout();
             TitlePanel.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            FiltersFlowPanel.SuspendLayout();
+            FilterPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)FIlterPicture).BeginInit();
             Hystogram4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Hystogram_B).BeginInit();
             Hystogram3.SuspendLayout();
@@ -83,7 +83,7 @@
             // panel2
             // 
             panel2.Controls.Add(TitlePanel);
-            panel2.Controls.Add(flowLayoutPanel1);
+            panel2.Controls.Add(FiltersFlowPanel);
             panel2.Dock = DockStyle.Bottom;
             panel2.Location = new Point(0, 646);
             panel2.Name = "panel2";
@@ -108,49 +108,52 @@
             SectionLabel.ForeColor = Color.White;
             SectionLabel.Location = new Point(4, 4);
             SectionLabel.Name = "SectionLabel";
-            SectionLabel.Size = new Size(108, 21);
+            SectionLabel.Size = new Size(54, 21);
             SectionLabel.TabIndex = 0;
-            SectionLabel.Text = "SectionName";
+            SectionLabel.Text = "Filters";
             // 
-            // flowLayoutPanel1
+            // FiltersFlowPanel
             // 
-            flowLayoutPanel1.Controls.Add(panel1);
-            flowLayoutPanel1.Dock = DockStyle.Bottom;
-            flowLayoutPanel1.Location = new Point(0, 28);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1100, 156);
-            flowLayoutPanel1.TabIndex = 7;
+            FiltersFlowPanel.Controls.Add(FilterPanel);
+            FiltersFlowPanel.Dock = DockStyle.Bottom;
+            FiltersFlowPanel.Location = new Point(0, 28);
+            FiltersFlowPanel.Name = "FiltersFlowPanel";
+            FiltersFlowPanel.Size = new Size(1100, 156);
+            FiltersFlowPanel.TabIndex = 7;
             // 
-            // panel1
+            // FilterPanel
             // 
-            panel1.BackColor = Color.FromArgb(36, 41, 62);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(FilterName);
-            panel1.Location = new Point(3, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(140, 153);
-            panel1.TabIndex = 8;
+            FilterPanel.BackColor = Color.FromArgb(36, 41, 62);
+            FilterPanel.Controls.Add(FIlterPicture);
+            FilterPanel.Controls.Add(FilterName);
+            FilterPanel.Location = new Point(3, 3);
+            FilterPanel.Name = "FilterPanel";
+            FilterPanel.Size = new Size(140, 153);
+            FilterPanel.TabIndex = 8;
             // 
-            // pictureBox1
+            // FIlterPicture
             // 
-            pictureBox1.Image = Properties.Resources.Logo;
-            pictureBox1.Location = new Point(12, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(117, 109);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            FIlterPicture.Image = Properties.Resources.Logo;
+            FIlterPicture.Location = new Point(12, 12);
+            FIlterPicture.Name = "FIlterPicture";
+            FIlterPicture.Size = new Size(117, 109);
+            FIlterPicture.SizeMode = PictureBoxSizeMode.Zoom;
+            FIlterPicture.TabIndex = 2;
+            FIlterPicture.TabStop = false;
             // 
             // FilterName
             // 
             FilterName.AutoSize = true;
+            FilterName.Enabled = false;
             FilterName.Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FilterName.ForeColor = Color.White;
             FilterName.Location = new Point(32, 124);
+            FilterName.Margin = new Padding(3);
             FilterName.Name = "FilterName";
             FilterName.Size = new Size(75, 17);
             FilterName.TabIndex = 0;
             FilterName.Text = "Filter Name";
+            FilterName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Hystogram4
             // 
@@ -464,10 +467,10 @@
             panel2.ResumeLayout(false);
             TitlePanel.ResumeLayout(false);
             TitlePanel.PerformLayout();
-            flowLayoutPanel1.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            FiltersFlowPanel.ResumeLayout(false);
+            FilterPanel.ResumeLayout(false);
+            FilterPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)FIlterPicture).EndInit();
             Hystogram4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Hystogram_B).EndInit();
             Hystogram3.ResumeLayout(false);
@@ -491,9 +494,9 @@
         private Panel panel2;
         private Panel TitlePanel;
         private Label SectionLabel;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panel1;
-        private PictureBox pictureBox1;
+        private FlowLayoutPanel FiltersFlowPanel;
+        private Panel FilterPanel;
+        private PictureBox FIlterPicture;
         private Label FilterName;
         private Panel Hystogram4;
         private Panel Hystogram3;

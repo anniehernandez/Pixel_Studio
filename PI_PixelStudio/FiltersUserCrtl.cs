@@ -24,16 +24,90 @@ namespace PI_PixelStudio
         public FiltersUserCrtl()
         {
             InitializeComponent();
-            LoadFilters();
+
+            List<Filters> filters = new List<Filters>
+            {
+                new Filters("Filter 1", Properties.Resources.Picture, 0),
+                new Filters("Filter 2", Properties.Resources.PixelStudio, 1),
+                new Filters("Filter 3", Properties.Resources.Logo, 2)
+            };
+            LoadFilters(filters);
 
             ButtonControl.Visible = false;
             ControlBar.Visible = false;
             Display.Visible = false;
         }
-        private void LoadFilters()
+        public void LoadFilters(List<Filters> filters)
         {
-            SectionLabel.Text = "Filters";
-            FilterName.Text = "FilterName";
+            FiltersFlowPanel.Controls.Clear();
+
+
+            foreach (var filter in filters)
+            {
+                Panel filterPanel = NewFilterPanel(filter);
+                FiltersFlowPanel.Controls.Add(filterPanel);
+            }
+        }
+        private Panel NewFilterPanel(Filters filter)
+        {
+            Panel panel = new Panel
+            {
+                Size = new Size(140, 153),
+                BackColor = Color.FromArgb(36, 41, 62),
+                BorderStyle = BorderStyle.None,
+                Name = "FilterPanel",
+                Tag = filter
+            };
+            PictureBox pictureBox = new PictureBox
+            {
+                Size = new Size(117, 109),
+                Image = filter.FilterImage,
+                Name = "FIlterPicture",
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Location = new Point(12, 12)
+            };
+            Label label = new Label
+            {
+                Text = filter.FilterName,
+                Size = new Size(75, 17),
+                AutoSize = true,
+                Font = new Font("Yu Gothic UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0),
+                ForeColor = Color.White,
+                Name = "FilterName",
+                Location = new Point(32, 124)
+            };
+            panel.Controls.Add(pictureBox);
+            panel.Controls.Add(label);
+
+            panel.Click += FilterPanel_Click;
+            pictureBox.Click += FilterPanel_Click;
+            label.Click += FilterPanel_Click;
+
+            return panel;
+        }
+        private void FilterPanel_Click(object sender, EventArgs e)
+        {
+            Control clickedControl = (Control)sender;
+
+            Panel panel = clickedControl as Panel ?? clickedControl.Parent as Panel;
+
+            if (panel != null && panel.Tag is Filters filter)
+            {
+                MessageBox.Show("Message" + filter.FilterNumber, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.None);
+
+                ApplyFilter(filter.FilterNumber);
+            }
+        }
+        private void ApplyFilter(int filterNumber)
+        {
+            switch (filterNumber)
+            {
+                case 0:
+                    Display.Image = originalImage;
+                    break;
+                case 1:
+                    break;
+            }
         }
         private void imageToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -54,12 +128,12 @@ namespace PI_PixelStudio
 
             if (play == true)
             {
-                Play_Pause.Image = Image.FromFile("C://Users//luish//source//repos//PI_PixelStudio//PI_PixelStudio//Resources//pause.png");
+                Play_Pause.Image = Properties.Resources.pause;
                 play = false;
             }
             else
             {
-                Play_Pause.Image = Image.FromFile("C://Users//luish//source//repos//PI_PixelStudio//PI_PixelStudio//Resources//play.png");
+                Play_Pause.Image = Properties.Resources.play;
                 play = true;
             }
         }
@@ -120,7 +194,7 @@ namespace PI_PixelStudio
         {
             int pictureBoxW = pictureBox.Width;
             int pictureBoxH = pictureBox.Height;
-            
+
             Bitmap hystogramImg = new Bitmap(pictureBoxW, pictureBoxH);
 
             Graphics g = Graphics.FromImage(hystogramImg);
