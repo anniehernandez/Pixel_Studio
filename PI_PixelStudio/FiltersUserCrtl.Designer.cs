@@ -31,7 +31,7 @@
             panel2 = new Panel();
             TitlePanel = new Panel();
             SectionLabel = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            FiltersFlowPanel = new FlowLayoutPanel();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             FilterName = new Label();
@@ -41,7 +41,7 @@
             Workspace = new Panel();
             panel2.SuspendLayout();
             TitlePanel.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
+            FiltersFlowPanel.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
@@ -50,7 +50,7 @@
             // panel2
             // 
             panel2.Controls.Add(TitlePanel);
-            panel2.Controls.Add(flowLayoutPanel1);
+            panel2.Controls.Add(FiltersFlowPanel);
             panel2.Dock = DockStyle.Bottom;
             panel2.Location = new Point(0, 646);
             panel2.Name = "panel2";
@@ -79,14 +79,14 @@
             SectionLabel.TabIndex = 0;
             SectionLabel.Text = "SectionName";
             // 
-            // flowLayoutPanel1
+            // FiltersFlowPanel
             // 
-            flowLayoutPanel1.Controls.Add(panel1);
-            flowLayoutPanel1.Dock = DockStyle.Bottom;
-            flowLayoutPanel1.Location = new Point(0, 28);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1100, 156);
-            flowLayoutPanel1.TabIndex = 7;
+            FiltersFlowPanel.Controls.Add(panel1);
+            FiltersFlowPanel.Dock = DockStyle.Bottom;
+            FiltersFlowPanel.Location = new Point(0, 28);
+            FiltersFlowPanel.Name = "FiltersFlowPanel";
+            FiltersFlowPanel.Size = new Size(1100, 156);
+            FiltersFlowPanel.TabIndex = 7;
             // 
             // panel1
             // 
@@ -169,7 +169,7 @@
             panel2.ResumeLayout(false);
             TitlePanel.ResumeLayout(false);
             TitlePanel.PerformLayout();
-            flowLayoutPanel1.ResumeLayout(false);
+            FiltersFlowPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -184,7 +184,7 @@
         private Panel panel2;
         private Panel TitlePanel;
         private Label SectionLabel;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel FiltersFlowPanel;
         private Panel panel1;
         private PictureBox pictureBox1;
         private Label FilterName;
