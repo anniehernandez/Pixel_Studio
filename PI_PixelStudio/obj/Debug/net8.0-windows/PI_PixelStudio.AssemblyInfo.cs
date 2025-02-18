@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PI_PixelStudio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e3f7bf43f2ba2c5b19b3acc59bf8678de831be7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa3c21e7acce19626c8f03e7ddd57e68fc6f5942")]
 [assembly: System.Reflection.AssemblyProductAttribute("PI_PixelStudio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PI_PixelStudio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

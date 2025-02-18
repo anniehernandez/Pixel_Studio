@@ -16,7 +16,6 @@ namespace PI_PixelStudio
         public VideoEditing()
         {
             InitializeComponent();
-            VideoDisplay.uiMode = "none";
         }
 
         private void Play_Pause_Click(object sender, EventArgs e)
@@ -24,49 +23,48 @@ namespace PI_PixelStudio
             if (play == true)
             {
                 Play_Pause.Image = Image.FromFile("C://Users//luish//source//repos//PI_PixelStudio//PI_PixelStudio//Resources//pause.png");
-                VideoDisplay.Ctlcontrols.play();
                 play = false;
             }
             else
             {
                 Play_Pause.Image = Image.FromFile("C://Users//luish//source//repos//PI_PixelStudio//PI_PixelStudio//Resources//play.png");
-                VideoDisplay.Ctlcontrols.pause();
                 play = true;
             }
         }
 
         private void Backward_Click(object sender, EventArgs e)
         {
-            VideoDisplay.Ctlcontrols.currentPosition -= 5;
+            //Display.Ctlcontrols.currentPosition -= 5;
         }
 
         private void Forward_Click(object sender, EventArgs e)
         {
-            VideoDisplay.Ctlcontrols.currentPosition += 5;
+            //Display.Ctlcontrols.currentPosition += 5;
         }
 
         private void Open_Click(object sender, EventArgs e)
         {
-            OpenFileDialog chooseFile = new OpenFileDialog();
+            //OpenFileDialog chooseFile = new OpenFileDialog();
 
-            chooseFile.Filter = "Video Files| *.mp4; *.avi; *.wmv; *.mov";
-            chooseFile.Title = "Select a Video";
+            //chooseFile.Filter = "Video Files| *.mp4; *.avi; *.wmv; *.mov";
+            //chooseFile.Title = "Select a Video";
 
-            if(chooseFile.ShowDialog() == DialogResult.OK)
-            {
-                string filePath = chooseFile.FileName;
-                string fileExtension = Path.GetExtension(filePath);
+            //if(chooseFile.ShowDialog() == DialogResult.OK)
+            //{
+            //    string filePath = chooseFile.FileName;
+            //    string fileExtension = Path.GetExtension(filePath);
 
-                if(fileExtension == ".mp4" || fileExtension == ".avi" || fileExtension == ".wmv" || fileExtension == ".mov")
-                {
-                    VideoDisplay.URL = filePath;
-                    VideoDisplay.Ctlcontrols.play();
-                }
-                else
-                {
-                    MessageBox.Show("Ups! Unsupported file format! :(", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            //    if(fileExtension == ".mp4" || fileExtension == ".avi" || fileExtension == ".wmv" || fileExtension == ".mov")
+            //    {
+            //        Display.URL = filePath;
+            //        Display.Ctlcontrols.play();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Ups! Unsupported file format! :(", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
         }
+
     }
 }
