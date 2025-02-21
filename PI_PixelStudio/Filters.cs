@@ -18,28 +18,5 @@ namespace PI_PixelStudio
             FilterImage = img;
             FilterNumber = number;
         }
-
-        public void FilterPanel_Click(object sender, EventArgs e)
-        {
-            Control clickedControl = (Control)sender;
-
-            Panel panel = clickedControl as Panel ?? clickedControl.Parent as Panel;
-
-            if (panel != null && panel.Tag is Filters filter)
-            {
-                //ApplyFilter(filter.FilterNumber);
-            }
-        }
-        //private void ApplyFilter(int filterNumber)
-        //{
-        //    switch (filterNumber)
-        //    {
-        //        case 0:
-        //            Display.Image = originalImage;
-        //            break;
-        //        case 1:
-        //            break;
-        //    }
-        //}
     }
 }
