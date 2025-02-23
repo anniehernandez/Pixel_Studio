@@ -35,7 +35,12 @@
             SelectCamera = new ComboBox();
             Open = new Button();
             Hexadecimal = new TextBox();
-            ColorName = new TextBox();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             CameraSettings.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -46,9 +51,9 @@
             CameraSettings.BackColor = Color.FromArgb(36, 41, 62);
             CameraSettings.Controls.Add(CameraImage);
             CameraSettings.Controls.Add(panel2);
-            CameraSettings.Location = new Point(100, 92);
+            CameraSettings.Location = new Point(35, 93);
             CameraSettings.Name = "CameraSettings";
-            CameraSettings.Size = new Size(820, 474);
+            CameraSettings.Size = new Size(950, 514);
             CameraSettings.TabIndex = 0;
             // 
             // CameraImage
@@ -56,7 +61,7 @@
             CameraImage.Dock = DockStyle.Fill;
             CameraImage.Location = new Point(0, 30);
             CameraImage.Name = "CameraImage";
-            CameraImage.Size = new Size(820, 444);
+            CameraImage.Size = new Size(950, 484);
             CameraImage.TabIndex = 1;
             // 
             // panel2
@@ -69,7 +74,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.RightToLeft = RightToLeft.No;
-            panel2.Size = new Size(820, 30);
+            panel2.Size = new Size(950, 30);
             panel2.TabIndex = 0;
             // 
             // button1
@@ -122,7 +127,7 @@
             Hexadecimal.BorderStyle = BorderStyle.None;
             Hexadecimal.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold);
             Hexadecimal.ForeColor = Color.White;
-            Hexadecimal.Location = new Point(100, 59);
+            Hexadecimal.Location = new Point(35, 60);
             Hexadecimal.Multiline = true;
             Hexadecimal.Name = "Hexadecimal";
             Hexadecimal.ReadOnly = true;
@@ -131,30 +136,100 @@
             Hexadecimal.Text = "#000000";
             Hexadecimal.TextAlign = HorizontalAlignment.Center;
             // 
-            // ColorName
+            // textBox1
             // 
-            ColorName.BackColor = Color.FromArgb(36, 41, 62);
-            ColorName.BorderStyle = BorderStyle.None;
-            ColorName.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold);
-            ColorName.ForeColor = Color.White;
-            ColorName.Location = new Point(200, 59);
-            ColorName.Multiline = true;
-            ColorName.Name = "ColorName";
-            ColorName.ReadOnly = true;
-            ColorName.Size = new Size(198, 27);
-            ColorName.TabIndex = 0;
-            ColorName.Text = "Color";
+            textBox1.BackColor = Color.FromArgb(36, 41, 62);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold);
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(366, 60);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(60, 27);
+            textBox1.TabIndex = 1;
+            textBox1.Text = "b";
+            textBox1.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.FromArgb(36, 41, 62);
+            textBox2.BorderStyle = BorderStyle.None;
+            textBox2.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold);
+            textBox2.ForeColor = Color.White;
+            textBox2.Location = new Point(264, 60);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(60, 27);
+            textBox2.TabIndex = 2;
+            textBox2.Text = "a";
+            textBox2.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.FromArgb(36, 41, 62);
+            textBox3.BorderStyle = BorderStyle.None;
+            textBox3.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold);
+            textBox3.ForeColor = Color.White;
+            textBox3.Location = new Point(166, 60);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(60, 27);
+            textBox3.TabIndex = 3;
+            textBox3.Text = "L";
+            textBox3.TextAlign = HorizontalAlignment.Center;
+            textBox3.TextChanged += textBox3_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(135, 60);
+            label1.Name = "label1";
+            label1.Size = new Size(25, 25);
+            label1.TabIndex = 4;
+            label1.Text = "L:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(232, 60);
+            label2.Name = "label2";
+            label2.Size = new Size(26, 25);
+            label2.TabIndex = 5;
+            label2.Text = "a:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(333, 60);
+            label3.Name = "label3";
+            label3.Size = new Size(27, 25);
+            label3.TabIndex = 6;
+            label3.Text = "b:";
             // 
             // CameraUserCtrl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
-            Controls.Add(ColorName);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(Hexadecimal);
             Controls.Add(CameraSettings);
             Name = "CameraUserCtrl";
-            Size = new Size(1020, 633);
+            Size = new Size(1020, 664);
             CameraSettings.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ResumeLayout(false);
@@ -167,9 +242,14 @@
         private Panel panel2;
         private Button Open;
         private TextBox Hexadecimal;
-        private TextBox ColorName;
         private ComboBox SelectCamera;
         private Button button1;
         private Panel CameraImage;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }
