@@ -33,13 +33,12 @@
             ImageStrip = new ToolStripMenuItem();
             VideoStrip = new ToolStripMenuItem();
             CameraStrip = new ToolStripMenuItem();
+            MoreStrip = new ToolStripMenuItem();
             UserManualInfo = new Panel();
             SectionPicture = new PictureBox();
             Intro = new TextBox();
             ContentRichBox = new RichTextBox();
             SectionNameLabel = new Label();
-            EffectsFiltersStrip = new ToolStripMenuItem();
-            MoreStrip = new ToolStripMenuItem();
             UserManualMenu.SuspendLayout();
             UserManualInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)SectionPicture).BeginInit();
@@ -49,7 +48,7 @@
             // 
             UserManualMenu.BackColor = Color.FromArgb(36, 41, 62);
             UserManualMenu.Font = new Font("Yu Gothic UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UserManualMenu.Items.AddRange(new ToolStripItem[] { MenuStrip, EffectsFiltersStrip, ImageStrip, VideoStrip, CameraStrip, MoreStrip });
+            UserManualMenu.Items.AddRange(new ToolStripItem[] { MenuStrip, ImageStrip, VideoStrip, CameraStrip, MoreStrip });
             UserManualMenu.Location = new Point(0, 0);
             UserManualMenu.Name = "UserManualMenu";
             UserManualMenu.Size = new Size(1020, 28);
@@ -86,6 +85,13 @@
             CameraStrip.Name = "CameraStrip";
             CameraStrip.Size = new Size(73, 24);
             CameraStrip.Text = "Camera";
+            // 
+            // MoreStrip
+            // 
+            MoreStrip.ForeColor = Color.White;
+            MoreStrip.Name = "MoreStrip";
+            MoreStrip.Size = new Size(58, 24);
+            MoreStrip.Text = "More";
             // 
             // UserManualInfo
             // 
@@ -148,20 +154,6 @@
             SectionNameLabel.TabIndex = 2;
             SectionNameLabel.Text = "Section Name";
             // 
-            // EffectsFiltersStrip
-            // 
-            EffectsFiltersStrip.ForeColor = Color.White;
-            EffectsFiltersStrip.Name = "EffectsFiltersStrip";
-            EffectsFiltersStrip.Size = new Size(120, 24);
-            EffectsFiltersStrip.Text = "Effects / Filters";
-            // 
-            // MoreStrip
-            // 
-            MoreStrip.ForeColor = Color.White;
-            MoreStrip.Name = "MoreStrip";
-            MoreStrip.Size = new Size(58, 24);
-            MoreStrip.Text = "More";
-            // 
             // UserManualUserCtrl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -192,7 +184,6 @@
         private RichTextBox ContentRichBox;
         private PictureBox SectionPicture;
         private TextBox Intro;
-        private ToolStripMenuItem EffectsFiltersStrip;
         private ToolStripMenuItem MoreStrip;
     }
 }
