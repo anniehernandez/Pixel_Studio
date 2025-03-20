@@ -187,7 +187,7 @@ namespace PI_PixelStudio
                 }
             }
         }
-        //HYSTOGRAMS
+        #region HYSTOGRAMS
         //GENERATE HYSTOGRAM
         public void RGBHistorgram_Start(Bitmap img)
         {
@@ -266,6 +266,8 @@ namespace PI_PixelStudio
 
             pictureBox.Image = hystogramImg;
         }
+
+        #region Paint Hystograms
         private void Hystogram1_Paint(object sender, PaintEventArgs e)//RGB
         {
             Graphics g = e.Graphics;
@@ -303,6 +305,10 @@ namespace PI_PixelStudio
             //    g.DrawLine(penBlue, i + 20, 121, i + 20, 121 - hystogramB[i]);
             //}
         }
+        #endregion
+
+        #endregion
+        #region FILTERS
         //FILTERS
         private Bitmap Invert(Bitmap img)
         {
@@ -656,5 +662,6 @@ namespace PI_PixelStudio
             RGBHistorgram_Start(img);
             return img;
         }
+        #endregion
     }
 }
