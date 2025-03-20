@@ -307,6 +307,7 @@ namespace PI_PixelStudio
             ZoomOut.Size = new Size(30, 30);
             ZoomOut.TabIndex = 6;
             ZoomOut.UseVisualStyleBackColor = true;
+            ZoomOut.Visible = false;
             // 
             // ZoomIn
             // 
@@ -322,6 +323,7 @@ namespace PI_PixelStudio
             ZoomIn.Size = new Size(30, 30);
             ZoomIn.TabIndex = 5;
             ZoomIn.UseVisualStyleBackColor = true;
+            ZoomIn.Visible = false;
             // 
             // Open
             // 

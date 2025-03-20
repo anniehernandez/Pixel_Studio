@@ -34,7 +34,7 @@ namespace PI_PixelStudio
                 new Filters("Heat Map", Properties.Resources.Heatmap, 5),
                 new Filters("Posterize", Properties.Resources.Posterize1, 6),
                 new Filters("Emboss", Properties.Resources.Emboss1, 7),
-                new Filters("Dithering", Properties.Resources.Dithering, 8),
+                new Filters("Comic", Properties.Resources.Dithering, 8),
                 new Filters("Pixel", Properties.Resources.Pixel, 9),
                 new Filters("Glitch", Properties.Resources.Glitch, 10),
                 new Filters("Glitch 1", Properties.Resources.Glitch_1, 11),
@@ -44,10 +44,10 @@ namespace PI_PixelStudio
             LoadFilters(filters);
 
         }
+        //FILTERS
         public void LoadFilters(List<Filters> filters)
         {
             FiltersFlowPanel.Controls.Clear();
-
 
             foreach (var filter in filters)
             {
@@ -120,11 +120,11 @@ namespace PI_PixelStudio
                     case 1: Display.Image = Invert(img); break;
                     case 2: Display.Image = GrayScale(img); break;
                     case 3: Display.Image = Negative(img); break;
-                    case 4: Display.Image = Contrast(img); break;
+                    case 4: Display.Image = Contrast(img); break;   
                     case 5: Display.Image = HeatMap(img); break;
                     case 6: Display.Image = Posterize(img); break;
                     case 7: Display.Image = Emboss(img); break;
-                    case 8: Display.Image = Dithering(img); break;
+                    case 8: Display.Image = Comic(img); break;
                     case 9: Display.Image = Pixel(img); break;
                     case 10: Display.Image = Glitch(img); break;
                     case 11: Display.Image = Glitch_1(img); break;
@@ -173,12 +173,22 @@ namespace PI_PixelStudio
             save.Filter = "Image Files| *.jpg; *.jpeg; *.png; *.bmp; *.gif";//Filter only image formats
             Image img = Display.Image;
 
-            if (save.ShowDialog() == DialogResult.OK)
+            if (img != null)
             {
-                img.Save(save.FileName);
-                MessageBox.Show("Image saved succesfully", "Image Saved", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("No image loaded!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    img.Save(save.FileName);
+                    MessageBox.Show("Image saved succesfully", "Image Saved", MessageBoxButtons.OK, MessageBoxIcon.None);
+                }
             }
         }
+        //HYSTOGRAMS
+        //GENERATE HYSTOGRAM
         public void RGBHistorgram_Start(Bitmap img)
         {
             if (Display.Image == null) return;
@@ -199,6 +209,7 @@ namespace PI_PixelStudio
             Hystogram_Draw_RGB(Hystogram_G, hystogramG, Color.Green);
             Hystogram_Draw_RGB(Hystogram_B, hystogramB, Color.Blue);
         }
+        //DRAW HYSTOGRAMS
         private void Hystogram_Draw(PictureBox pictureBox, int[] hystogramR, int[] hystogramG, int[] hystogramB)//RGB
         {
             int pictureBoxW = pictureBox.Width;
@@ -292,7 +303,7 @@ namespace PI_PixelStudio
             //    g.DrawLine(penBlue, i + 20, 121, i + 20, 121 - hystogramB[i]);
             //}
         }
-
+        //FILTERS
         private Bitmap Invert(Bitmap img)
         {
             for (int j = 0; j < img.Height; j++)
@@ -442,7 +453,7 @@ namespace PI_PixelStudio
             RGBHistorgram_Start(img);
             return img;
         }
-        private Bitmap Dithering(Bitmap img)
+        private Bitmap Comic(Bitmap img)
         {
             for (int j = 0; j < img.Height; j++)
             {
