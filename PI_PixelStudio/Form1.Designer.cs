@@ -30,6 +30,7 @@ namespace PI_PixelStudio
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PixelStudio));
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             ActiveBar = new Panel();
@@ -305,7 +306,7 @@ namespace PI_PixelStudio
             Controls.Add(panel1);
             Font = new Font("Yu Gothic UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Location = new Point(0, 50);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PixelStudio";
             Text = "PixelStudio";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -4,7 +4,6 @@ namespace PI_PixelStudio{
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragWindowPoint;
-        private ImageUserCrtl currentFiltersControl;
         public PixelStudio()
         {
             InitializeComponent();
