@@ -80,6 +80,22 @@ namespace PI_PixelStudio
                 if (!frame.Empty())
                 {
                     image = BitmapConverter.ToBitmap(frame);
+
+                    using (Graphics g = Graphics.FromImage(image))
+                    {
+                        int centerX = frame.Width / 2;
+                        int centerY = frame.Height / 2;
+                        int boxSize = 50;
+
+                        // Draw guidelines
+                        Pen pen = new Pen(Color.Red, 1);
+                        g.DrawLine(pen, centerX - 40, centerY, centerX + 40, centerY); // Horizontal
+                        g.DrawLine(pen, centerX, centerY - 40, centerX, centerY + 40); // Vertical
+                        g.DrawRectangle(pen, centerX - boxSize / 2, centerY - boxSize / 2, boxSize, boxSize); // Capture area
+
+                        var color = GetColorAt(centerX, centerY);
+                    }
+
                     CameraImage.Image = image;
 
                     if(isCapturing)
@@ -88,6 +104,11 @@ namespace PI_PixelStudio
                     }
                 }
             }
+        }
+        private Color GetColorAt(int x, int y)
+        {
+            Vec3b pixel = frame.At<Vec3b>(y, x);
+            return Color.FromArgb(pixel[2], pixel[1], pixel[0]); // Convert BGR to RGB
         }
 
         private void GetColor()
