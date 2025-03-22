@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.IO.Packaging;
@@ -22,7 +23,6 @@ namespace PI_PixelStudio
         private VideoCapture _videoCapture;
         private System.Windows.Forms.Timer _frameTimer;
         private Mat _frame;
-
         private int[] hystogramR = new int[256];
         private int[] hystogramG = new int[256];
         private int[] hystogramB = new int[256];
@@ -31,12 +31,14 @@ namespace PI_PixelStudio
 
         int activeFilter = 0;
 
+        private System.Windows.Forms.ProgressBar progressBar;
+        private Label progressLabel;
         public VideoUserCtrl()
         {
             InitializeComponent();
 
             _frameTimer = new System.Windows.Forms.Timer();
-            _frameTimer.Interval = 33; // ~30 FPS (1000ms / 30)
+            _frameTimer.Interval = 33; 
             _frameTimer.Tick += FrameTimer_Tick;
             _frame = new Mat();
 
@@ -50,7 +52,7 @@ namespace PI_PixelStudio
                 new Filters("Heat Map", Properties.Resources.Heatmap, 5),
                 new Filters("Posterize", Properties.Resources.Posterize1, 6),
                 new Filters("Emboss", Properties.Resources.Emboss1, 7),
-                new Filters("Dithering", Properties.Resources.Dithering, 8),
+                new Filters("Comic", Properties.Resources.Dithering, 8),
                 new Filters("Pixel", Properties.Resources.Pixel, 9),
                 new Filters("Glitch", Properties.Resources.Glitch, 10),
                 new Filters("Glitch 1", Properties.Resources.Glitch_1, 11),
@@ -129,28 +131,33 @@ namespace PI_PixelStudio
                 }
             }
         }
-        private void ApplyFilter(int filterNumber, Bitmap frame)
+        private Bitmap ApplyFilter(int filterNumber, Bitmap frame)
         {
             switch (filterNumber)
             {
-                case 0: None(); break;
-                case 1: Display.Image = Invert(frame); break;
-                case 2: Display.Image = GrayScale(frame); break;
-                case 3: Display.Image = Negative(frame); break;
-                case 4: Display.Image = Contrast(frame); break;
-                case 5: Display.Image = HeatMap(frame); break;
-                case 6: Display.Image = Posterize(frame); break;
-                case 7: Display.Image = Emboss(frame); break;
-                case 8: Display.Image = Dithering(frame); break;
-                case 9: Display.Image = Pixel(frame); break;
-                case 10: Display.Image = Glitch(frame); break;
-                case 11: Display.Image = Glitch_1(frame); break;
-                case 12: Display.Image = Glitch_2(frame); break;
-                case 13: Display.Image = Glitch_3(frame); break;
+                case 0: return frame; 
+                case 1: return Invert(frame);
+                case 2: return GrayScale(frame);
+                case 3: return Negative(frame);
+                case 4: return Contrast(frame);
+                case 5: return HeatMap(frame);
+                case 6: return Posterize(frame);
+                case 7: return Emboss(frame);
+                case 8: return Comic(frame);
+                case 9: return Pixel(frame);
+                case 10: return Glitch(frame);
+                case 11: return Glitch_1(frame);
+                case 12: return Glitch_2(frame);
+                case 13: return Glitch_3(frame);
+                default: return frame; 
             }
-           
         }
+        //VIDEO CONTROLS
         private void Play_Pause_Click(object sender, EventArgs e)
+        {
+            Play_Pause_Control();
+        }
+        private void Play_Pause_Control()
         {
             if (play == true)
             {
@@ -211,7 +218,6 @@ namespace PI_PixelStudio
         {
             if (_videoCapture.Read(_frame) && !_frame.IsEmpty)
             {
-
                 var inputFrame = _frame.ToImage<Bgr, byte>();
 
                 int VideoWidth = inputFrame.Width;
@@ -240,7 +246,7 @@ namespace PI_PixelStudio
                 Display.Image?.Dispose();
                 Display.Image = resizedFrame.ToBitmap();
 
-                ApplyFilter(activeFilter, resizedFrame.ToBitmap());
+                Display.Image = ApplyFilter(activeFilter, resizedFrame.ToBitmap());
                 RGBHistorgram_Start(resizedFrame.ToBitmap());
             }
             else
@@ -255,19 +261,119 @@ namespace PI_PixelStudio
             _videoCapture?.Dispose(); 
             _frame?.Dispose(); 
         }
+        //SAVE VIDEO
         private void Save_Click(object sender, EventArgs e)
         {
-            SaveFileDialog save = new SaveFileDialog();
-
-            save.Filter = "Video Files| *.mp4; *.avi; *.wmv; *.mov";
-            Image img = Display.Image;
-
-            if (save.ShowDialog() == DialogResult.OK)
+            Play_Pause_Control();
+            try
             {
-                img.Save(save.FileName);
-            }
+                if (_frame.IsEmpty)
+                {
+                    throw new InvalidOperationException("Hold on! Select a video first!");
+                }
+                else
+                {
+                    SaveFileDialog saveDialog = new SaveFileDialog
+                    {
+                        Filter = "Video Files| *.mp4; *.avi; *.wmv; *.mov",
+                        Title = "Save Processed Video"
+                    };
 
+                    if (saveDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        string filePath = saveDialog.FileName;
+
+                        ProgressBarForm progressForm = new ProgressBarForm();
+                        progressForm.Show();
+
+                        try
+                        {
+                            int totalFrames = (int)_videoCapture.Get(Emgu.CV.CvEnum.CapProp.FrameCount);
+                            double fps = (int)_videoCapture.Get(Emgu.CV.CvEnum.CapProp.Fps);
+                            int width = _videoCapture.Width;
+                            int height = _videoCapture.Height;
+
+                            using (var videoWriter = new Emgu.CV.VideoWriter(filePath, Emgu.CV.VideoWriter.Fourcc('M', 'J', 'P', 'G'), fps, new System.Drawing.Size(width, height), true))
+                            {
+                                List<Mat> buffer = new List<Mat>();
+
+                                int processedFrames = 0;
+
+                                for (int i = 0; i < totalFrames; i++)
+                                {
+                                    double currentFrame = _videoCapture.Get(Emgu.CV.CvEnum.CapProp.PosFrames);
+
+                                    if (!_videoCapture.Read(_frame) || _frame.IsEmpty)
+                                    {
+                                        MessageBox.Show($"Error: Unable to read frame at {i + 1}/{totalFrames}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        break;
+                                    }
+                                    if (currentFrame >= totalFrames - 1)
+                                    {
+                                        MessageBox.Show($"Reached the last frame: {i + 1}/{totalFrames}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        break;
+                                    }
+
+                                    var resizedFrame = _frame.ToImage<Bgr, byte>();
+                                    resizedFrame = resizedFrame.Resize(Display.Width, Display.Height, Emgu.CV.CvEnum.Inter.Linear);
+                                    Bitmap filteredFrame = ApplyFilter(activeFilter, resizedFrame.ToBitmap());
+
+                                    if (filteredFrame == null)
+                                    {
+                                        MessageBox.Show($"Error: Filtered frame at {i + 1}/{totalFrames} is null!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        break;
+                                    }
+
+                                    using (Emgu.CV.Mat processedMat = Emgu.CV.BitmapExtension.ToMat(filteredFrame))
+                                    {
+                                        if (processedMat.IsEmpty)
+                                        {
+                                            MessageBox.Show($"Error: Processed frame at {i + 1}/{totalFrames} is empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            break;
+                                        }
+
+                                        buffer.Add(processedMat.Clone());
+
+                                        if (buffer.Count >= 10)
+                                        {
+                                            foreach (var frame in buffer)
+                                                videoWriter.Write(frame);
+                                            buffer.Clear();
+                                        }
+
+                                        processedFrames++;
+                                    }
+
+                                    progressForm.Invoke(new Action(() =>
+                                    {
+                                        progressForm.UpdateProgress((int)((processedFrames) / (float)totalFrames * 100));
+                                    }));
+                                }
+
+                                foreach (var frame in buffer)
+                                    videoWriter.Write(frame);
+                                buffer.Clear();
+
+                                MessageBox.Show($"Video processing complete! {processedFrames}/{totalFrames} frames written.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error saving video: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            progressForm.Close();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+        #region HYSTOGRAMS
         public void RGBHistorgram_Start(Bitmap img)
         {
             if (Display.Image == null) return;
@@ -344,7 +450,7 @@ namespace PI_PixelStudio
 
             pictureBox.Image = hystogramImg;
         }
-
+        #region Paint Hystograms
         private void Hystogram1_Paint(object sender, PaintEventArgs e)//RGB
         {
             Graphics g = e.Graphics;
@@ -377,42 +483,9 @@ namespace PI_PixelStudio
             g.DrawLine(penAxis, 4, 126, 126, 126);
             g.DrawLine(penAxis, 4, 126, 4, 4);
         }
-
-        private void None()
-        {
-            var inputFrame = _frame.ToImage<Bgr, byte>();
-
-            int VideoWidth = inputFrame.Width;
-            int VideoHeight = inputFrame.Height;
-
-            int DisplayWidth = Display.Width;
-            int DisplayHeight = Display.Height;
-
-            float aspectRatio = (float)VideoWidth / VideoHeight;
-
-            int newWidth, newHeight;
-
-            if ((DisplayWidth / (float)DisplayHeight) > aspectRatio)
-            {
-                newHeight = DisplayHeight;
-                newWidth = (int)(DisplayHeight * aspectRatio);
-            }
-            else
-            {
-                newWidth = DisplayWidth;
-                newHeight = (int)(DisplayWidth / aspectRatio);
-            }
-
-            var resizedFrame = inputFrame.Resize(newWidth, newHeight, Emgu.CV.CvEnum.Inter.Linear);
-
-            if (Display.Image != null) { 
-                Display.Image.Dispose();
-            }
-
-            Display.Image = resizedFrame.ToBitmap();
-
-            RGBHistorgram_Start(resizedFrame.ToBitmap());
-        }
+        #endregion
+        #endregion
+        #region FILTERS
         private Bitmap Invert(Bitmap img)
         {
             for (int j = 0; j < img.Height; j++)
@@ -562,7 +635,7 @@ namespace PI_PixelStudio
             RGBHistorgram_Start(img);
             return img;
         }
-        private Bitmap Dithering(Bitmap img)
+        private Bitmap Comic(Bitmap img)
         {
             for (int j = 0; j < img.Height; j++)
             {
@@ -765,5 +838,6 @@ namespace PI_PixelStudio
             RGBHistorgram_Start(img);
             return img;
         }
+        #endregion
     }
 }

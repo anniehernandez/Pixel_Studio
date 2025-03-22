@@ -301,6 +301,7 @@
             Forward.Size = new Size(53, 30);
             Forward.TabIndex = 7;
             Forward.UseVisualStyleBackColor = false;
+            Forward.Visible = false;
             // 
             // Play_Pause
             // 
@@ -336,6 +337,7 @@
             Backward.Size = new Size(53, 30);
             Backward.TabIndex = 6;
             Backward.UseVisualStyleBackColor = false;
+            Backward.Visible = false;
             // 
             // ControlBar
             // 
@@ -363,6 +365,7 @@
             Save.Size = new Size(30, 30);
             Save.TabIndex = 7;
             Save.UseVisualStyleBackColor = true;
+            Save.Visible = false;
             Save.Click += Save_Click;
             // 
             // Open
