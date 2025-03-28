@@ -99,5 +99,11 @@ namespace PI_PixelStudio{
             ActiveBar.Top = CameraButton.Top;
             ActiveBar.Left = CameraButton.Left;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            ContainerPanel.Controls.Clear();
+            ContainerPanel.Controls.Add(pictureBox3);
+        }
     }
 }

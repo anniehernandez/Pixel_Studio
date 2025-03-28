@@ -48,7 +48,8 @@ namespace PI_PixelStudio
             Maximize = new Button();
             Exit = new Button();
             ContainerPanel = new Panel();
-            pictureBox3 = new PictureBox();
+            pictureBox3 = new 
+                ();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -199,6 +200,7 @@ namespace PI_PixelStudio
             label1.Size = new Size(75, 17);
             label1.TabIndex = 0;
             label1.Text = "PixelStudio";
+            label1.Click += label1_Click;
             // 
             // pictureBox4
             // 
