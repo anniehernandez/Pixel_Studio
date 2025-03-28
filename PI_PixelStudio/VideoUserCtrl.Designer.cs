@@ -50,11 +50,16 @@
             ButtonControl = new TableLayoutPanel();
             Forward = new Button();
             Play_Pause = new Button();
+            Restart = new Button();
             Backward = new Button();
             ControlBar = new Panel();
             Save = new Button();
             Open = new Button();
             panel6 = new Panel();
+            FilterManagerPanel = new Panel();
+            FilterValueTextBox = new TextBox();
+            Apply = new Button();
+            ValueName = new Label();
             panel2.SuspendLayout();
             TitlePanel.SuspendLayout();
             FiltersFlowPanel.SuspendLayout();
@@ -72,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)Display).BeginInit();
             ButtonControl.SuspendLayout();
             ControlBar.SuspendLayout();
+            FilterManagerPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -268,14 +274,16 @@
             // ButtonControl
             // 
             ButtonControl.BackColor = Color.FromArgb(30, 34, 52);
-            ButtonControl.ColumnCount = 5;
-            ButtonControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37F));
+            ButtonControl.ColumnCount = 6;
+            ButtonControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 38F));
             ButtonControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8F));
             ButtonControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8F));
             ButtonControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8F));
-            ButtonControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37F));
-            ButtonControl.Controls.Add(Forward, 3, 0);
-            ButtonControl.Controls.Add(Play_Pause, 2, 0);
+            ButtonControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8F));
+            ButtonControl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 38F));
+            ButtonControl.Controls.Add(Forward, 4, 0);
+            ButtonControl.Controls.Add(Play_Pause, 3, 0);
+            ButtonControl.Controls.Add(Restart, 2, 0);
             ButtonControl.Controls.Add(Backward, 1, 0);
             ButtonControl.Dock = DockStyle.Bottom;
             ButtonControl.Location = new Point(0, 545);
@@ -296,12 +304,13 @@
             Forward.ForeColor = Color.White;
             Forward.Image = Properties.Resources.forward;
             Forward.ImageAlign = ContentAlignment.TopCenter;
-            Forward.Location = new Point(396, 3);
+            Forward.Location = new Point(421, 3);
             Forward.Name = "Forward";
-            Forward.Size = new Size(53, 30);
-            Forward.TabIndex = 7;
+            Forward.Size = new Size(48, 30);
+            Forward.TabIndex = 9;
             Forward.UseVisualStyleBackColor = false;
             Forward.Visible = false;
+            Forward.Click += Forward_Click;
             // 
             // Play_Pause
             // 
@@ -314,12 +323,30 @@
             Play_Pause.ForeColor = Color.White;
             Play_Pause.Image = Properties.Resources.play;
             Play_Pause.ImageAlign = ContentAlignment.TopCenter;
-            Play_Pause.Location = new Point(337, 3);
+            Play_Pause.Location = new Point(367, 3);
             Play_Pause.Name = "Play_Pause";
-            Play_Pause.Size = new Size(53, 30);
-            Play_Pause.TabIndex = 5;
+            Play_Pause.Size = new Size(48, 30);
+            Play_Pause.TabIndex = 8;
             Play_Pause.UseVisualStyleBackColor = false;
             Play_Pause.Click += Play_Pause_Click;
+            // 
+            // Restart
+            // 
+            Restart.BackColor = Color.FromArgb(36, 41, 62);
+            Restart.Dock = DockStyle.Fill;
+            Restart.Enabled = false;
+            Restart.FlatAppearance.BorderSize = 0;
+            Restart.FlatStyle = FlatStyle.Flat;
+            Restart.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Restart.ForeColor = Color.White;
+            Restart.Image = Properties.Resources.restart;
+            Restart.ImageAlign = ContentAlignment.TopCenter;
+            Restart.Location = new Point(313, 3);
+            Restart.Name = "Restart";
+            Restart.Size = new Size(48, 30);
+            Restart.TabIndex = 5;
+            Restart.UseVisualStyleBackColor = false;
+            Restart.Click += Restart_Click;
             // 
             // Backward
             // 
@@ -332,12 +359,13 @@
             Backward.ForeColor = Color.White;
             Backward.Image = Properties.Resources.backward;
             Backward.ImageAlign = ContentAlignment.TopCenter;
-            Backward.Location = new Point(278, 3);
+            Backward.Location = new Point(259, 3);
             Backward.Name = "Backward";
-            Backward.Size = new Size(53, 30);
+            Backward.Size = new Size(48, 30);
             Backward.TabIndex = 6;
             Backward.UseVisualStyleBackColor = false;
             Backward.Visible = false;
+            Backward.Click += Backward_Click;
             // 
             // ControlBar
             // 
@@ -391,11 +419,64 @@
             panel6.Size = new Size(200, 100);
             panel6.TabIndex = 3;
             // 
+            // FilterManagerPanel
+            // 
+            FilterManagerPanel.Controls.Add(FilterValueTextBox);
+            FilterManagerPanel.Controls.Add(Apply);
+            FilterManagerPanel.Controls.Add(ValueName);
+            FilterManagerPanel.Location = new Point(800, 318);
+            FilterManagerPanel.Name = "FilterManagerPanel";
+            FilterManagerPanel.Size = new Size(266, 61);
+            FilterManagerPanel.TabIndex = 44;
+            FilterManagerPanel.Visible = false;
+            // 
+            // FilterValueTextBox
+            // 
+            FilterValueTextBox.BackColor = Color.FromArgb(36, 41, 62);
+            FilterValueTextBox.BorderStyle = BorderStyle.None;
+            FilterValueTextBox.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FilterValueTextBox.ForeColor = Color.WhiteSmoke;
+            FilterValueTextBox.Location = new Point(135, 0);
+            FilterValueTextBox.Name = "FilterValueTextBox";
+            FilterValueTextBox.PlaceholderText = "000";
+            FilterValueTextBox.Size = new Size(131, 22);
+            FilterValueTextBox.TabIndex = 41;
+            FilterValueTextBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // Apply
+            // 
+            Apply.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Apply.BackColor = Color.FromArgb(30, 34, 52);
+            Apply.FlatAppearance.BorderSize = 0;
+            Apply.FlatStyle = FlatStyle.Flat;
+            Apply.Font = new Font("Yu Gothic UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Apply.ForeColor = Color.White;
+            Apply.ImageAlign = ContentAlignment.MiddleRight;
+            Apply.Location = new Point(0, 33);
+            Apply.Name = "Apply";
+            Apply.Size = new Size(266, 28);
+            Apply.TabIndex = 42;
+            Apply.Text = "Apply";
+            Apply.UseVisualStyleBackColor = false;
+            Apply.Click += Apply_Click;
+            // 
+            // ValueName
+            // 
+            ValueName.AutoSize = true;
+            ValueName.Font = new Font("Yu Gothic UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ValueName.ForeColor = Color.White;
+            ValueName.Location = new Point(0, 0);
+            ValueName.Name = "ValueName";
+            ValueName.Size = new Size(96, 20);
+            ValueName.TabIndex = 40;
+            ValueName.Text = "Value Name:";
+            // 
             // VideoUserCtrl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
+            Controls.Add(FilterManagerPanel);
             Controls.Add(panel2);
             Controls.Add(Hystogram4);
             Controls.Add(Hystogram3);
@@ -423,6 +504,8 @@
             ((System.ComponentModel.ISupportInitialize)Display).EndInit();
             ButtonControl.ResumeLayout(false);
             ControlBar.ResumeLayout(false);
+            FilterManagerPanel.ResumeLayout(false);
+            FilterManagerPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -448,12 +531,17 @@
         private Panel EditingSpace;
         private PictureBox Display;
         private TableLayoutPanel ButtonControl;
-        private Button Forward;
-        private Button Play_Pause;
+        private Button Restart;
         private Button Backward;
         private Panel ControlBar;
         private Button Save;
         private Button Open;
         private Panel panel6;
+        private Button Forward;
+        private Button Play_Pause;
+        private Panel FilterManagerPanel;
+        private TextBox FilterValueTextBox;
+        private Button Apply;
+        private Label ValueName;
     }
 }
