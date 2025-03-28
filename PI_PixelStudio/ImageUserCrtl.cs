@@ -19,6 +19,8 @@ namespace PI_PixelStudio
         private int[] hystogramR = new int[256];
         private int[] hystogramG = new int[256];
         private int[] hystogramB = new int[256];
+        private int activeFilter;
+        private int filterValue;
 
         public ImageUserCrtl()
         {
@@ -93,6 +95,7 @@ namespace PI_PixelStudio
 
             return panel;
         }
+        //private FilterParamForm filterParam;
         private void FilterPanel_Click(object sender, EventArgs e)
         {
             Control clickedControl = (Control)sender;
@@ -101,7 +104,29 @@ namespace PI_PixelStudio
 
             if (panel != null && panel.Tag is Filters filter)
             {
-                ApplyFilter(filter.FilterNumber);
+                activeFilter = filter.FilterNumber;
+                ApplyFilter(activeFilter);
+            }
+        }
+        public void SetValueFilter(string name, int value)
+        {
+            ValueName.Text = name;
+            FilterValueTextBox.Text = value.ToString();
+        }
+        private void Apply_Click(object sender, EventArgs e)
+        {
+            string filterValueText = FilterValueTextBox.Text;
+            int value;
+
+            if (int.TryParse(filterValueText, out value))
+            {
+
+                filterValue = value;
+                ApplyFilter(activeFilter);
+            }
+            else
+            {
+                MessageBox.Show("Incorrect Value", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void ApplyFilter(int filterNumber)
@@ -114,22 +139,109 @@ namespace PI_PixelStudio
                 }
                 Bitmap img = new Bitmap(originalImage);
 
+
                 switch (filterNumber)
                 {
-                    case 0: Display.Image = originalImage; RGBHistorgram_Start(img); break;
-                    case 1: Display.Image = Invert(img); break;
-                    case 2: Display.Image = GrayScale(img); break;
-                    case 3: Display.Image = Negative(img); break;
-                    case 4: Display.Image = Contrast(img); break;   
-                    case 5: Display.Image = HeatMap(img); break;
-                    case 6: Display.Image = Posterize(img); break;
-                    case 7: Display.Image = Emboss(img); break;
-                    case 8: Display.Image = Comic(img); break;
-                    case 9: Display.Image = Pixel(img); break;
-                    case 10: Display.Image = Glitch(img); break;
-                    case 11: Display.Image = Glitch_1(img); break;
-                    case 12: Display.Image = Glitch_2(img); break;
-                    case 13: Display.Image = Glitch_3(img); break;
+                    case 0:
+                        Display.Image = originalImage;
+                        RGBHistorgram_Start(img);
+                        FilterManagerPanel.Visible = false;
+                        break;
+
+                    case 1:
+                        Display.Image = Invert(img);
+                        FilterManagerPanel.Visible = false;
+                        break;
+
+                    case 2:
+                        Display.Image = GrayScale(img);
+                        FilterManagerPanel.Visible = false;
+                        break;
+
+                    case 3:
+                        Display.Image = Negative(img);
+                        FilterManagerPanel.Visible = false;
+                        break;
+
+                    case 4:
+                        FilterManagerPanel.Visible = true;
+                        if (filterValue == 0 || filterValue < 0)
+                        {
+                            filterValue = 40;
+                        }
+                        SetValueFilter("Contrast Intensity:", filterValue);
+                        Display.Image = Contrast(img);
+                        break;
+
+                    case 5:
+                        Display.Image = HeatMap(img);
+                        FilterManagerPanel.Visible = false;
+                        break;
+
+                    case 6:
+                        FilterManagerPanel.Visible = true;
+                        if (filterValue == 0 || filterValue < 0)
+                        {
+                            filterValue = 4;
+                        }
+                        SetValueFilter("Levels:", filterValue);
+                        Display.Image = Posterize(img);
+                        break;
+
+                    case 7:
+                        Display.Image = Emboss(img);
+                        FilterManagerPanel.Visible = false;
+                        break;
+
+                    case 8:
+                        Display.Image = Comic(img);
+                        FilterManagerPanel.Visible = false;
+                        break;
+
+                    case 9:
+                        FilterManagerPanel.Visible = true;
+                        if (filterValue == 0 || filterValue < 0)
+                        {
+                            filterValue = 10;
+                        }
+                        SetValueFilter("Pixel Size:", filterValue);
+                        Display.Image = Pixel(img);
+                        break;
+
+                    case 10:
+                        Display.Image = Glitch(img);
+                        FilterManagerPanel.Visible = false;
+                        break;
+
+                    case 11:
+                        FilterManagerPanel.Visible = true;
+                        if (filterValue == 0 || filterValue < 0)
+                        {
+                            filterValue = 8;
+                        }
+                        SetValueFilter("Glitch Intensity:", filterValue);
+                        Display.Image = Glitch_1(img);
+                        break;
+
+                    case 12:
+                        FilterManagerPanel.Visible = true;
+                        if (filterValue == 0 || filterValue < 0)
+                        {
+                            filterValue = 8;
+                        }
+                        SetValueFilter("Glitch Intensity:", filterValue);
+                        Display.Image = Glitch_2(img);
+                        break;
+
+                    case 13:
+                        FilterManagerPanel.Visible = true;
+                        if (filterValue == 0 || filterValue < 0)
+                        {
+                            filterValue = 8;
+                        }
+                        SetValueFilter("Glitch Intensity:", filterValue);
+                        Display.Image = Glitch_3(img);
+                        break;
                 }
             }
             catch (Exception ex)
@@ -153,6 +265,7 @@ namespace PI_PixelStudio
                 if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png" || fileExtension == ".bmp" || fileExtension == ".gif")
                 {
                     Display.Image = Image.FromFile(filePath);
+                    FilterManagerPanel.Visible = false;
 
                     originalImage = new Bitmap(Display.Image);
 
@@ -367,9 +480,9 @@ namespace PI_PixelStudio
         }
         private Bitmap Contrast(Bitmap img)
         {
-            int contrastIntensity = 40;
+            //int contrastIntensity = 40;
 
-            float Contrast = (100.0f + contrastIntensity) / 100.0f;
+            float Contrast = (100.0f + filterValue) / 100.0f;
             Contrast *= Contrast;
 
             for (int j = 0; j < img.Height; j++)
@@ -391,6 +504,7 @@ namespace PI_PixelStudio
                     img.SetPixel(i, j, Color.FromArgb((int)R, (int)G, (int)B));
                 }
             }
+
             RGBHistorgram_Start(img);
             return img;
         }
@@ -421,8 +535,8 @@ namespace PI_PixelStudio
         }
         private Bitmap Posterize(Bitmap img)
         {
-            int levels = 4;
-            int factor = 255 / (levels - 1);
+            //int levels = 4;
+            int factor = 255 / (filterValue - 1);
 
             for (int j = 0; j < img.Height; j++)
             {
@@ -479,21 +593,21 @@ namespace PI_PixelStudio
         }
         private Bitmap Pixel(Bitmap img)
         {
-            int Pixel = 10;//pizel size
+            //int Pixel = 10;//pizel size
             int iPixel, jPixel;
             int sumR, sumG, sumB;
 
-            for (int i = 0; i < img.Width - Pixel ; i+= Pixel)
+            for (int i = 0; i < img.Width - filterValue; i += filterValue)
             {
-                for (int j = 0; j < img.Height - Pixel; j+= Pixel)
+                for (int j = 0; j < img.Height - filterValue; j += filterValue)
                 {
                     sumR = 0;
                     sumG = 0;
                     sumB = 0;
 
-                    for (iPixel = i; iPixel < (i + Pixel); iPixel++)//Sums the value of a particular set of pixels depending of the Pixel size (gets the Pixel color)
+                    for (iPixel = i; iPixel < (i + filterValue); iPixel++)//Sums the value of a particular set of pixels depending of the Pixel size (gets the Pixel color)
                     {
-                        for (jPixel = j; jPixel < (j + Pixel); jPixel++)
+                        for (jPixel = j; jPixel < (j + filterValue); jPixel++)
                         {
                             Color color = img.GetPixel(iPixel, jPixel);
 
@@ -503,15 +617,15 @@ namespace PI_PixelStudio
                         }
                     }
 
-                    int R = sumR / (Pixel * Pixel);
-                    int G = sumG / (Pixel * Pixel);
-                    int B = sumB / (Pixel * Pixel);
+                    int R = sumR / (filterValue * filterValue);
+                    int G = sumG / (filterValue * filterValue);
+                    int B = sumB / (filterValue * filterValue);
 
                     Color colorM = Color.FromArgb(R, G, B);
 
-                    for(iPixel = i; iPixel < (i + Pixel); iPixel++)
+                    for (iPixel = i; iPixel < (i + filterValue); iPixel++)
                     {
-                        for (jPixel = j; jPixel < (j + Pixel); jPixel++)
+                        for (jPixel = j; jPixel < (j + filterValue); jPixel++)
                         {
                             img.SetPixel(iPixel, jPixel, colorM);
                         }
@@ -559,7 +673,7 @@ namespace PI_PixelStudio
         }
         private Bitmap Glitch_1(Bitmap img)
         {
-            int glitchIntensity = 8;
+            //int filterValue = 8;
             int R, G, B;
 
             for (int j = 0; j < img.Height; j++)
@@ -568,18 +682,18 @@ namespace PI_PixelStudio
                 {
                     G = img.GetPixel(i, j).G;
 
-                    if (i + glitchIntensity < img.Width)
+                    if (i + filterValue < img.Width)
                     {
-                        R = img.GetPixel(i + glitchIntensity, j).R;
+                        R = img.GetPixel(i + filterValue, j).R;
                     }
                     else
                     {
                         R = 0;
                     }
 
-                    if (i - glitchIntensity >= 0)
+                    if (i - filterValue >= 0)
                     {
-                        B = img.GetPixel(i - glitchIntensity, j).B;
+                        B = img.GetPixel(i - filterValue, j).B;
                     }
                     else
                     {
@@ -594,7 +708,7 @@ namespace PI_PixelStudio
         }
         private Bitmap Glitch_2(Bitmap img)
         {
-            int glitchIntensity = 8;
+            int filterValue = 8;
             int R, G, B;
 
             for (int j = 0; j < img.Height; j++)
@@ -603,18 +717,18 @@ namespace PI_PixelStudio
                 {
                     R = img.GetPixel(i, j).R;
 
-                    if (i + glitchIntensity < img.Width)
+                    if (i + filterValue < img.Width)
                     {
-                        B = img.GetPixel(i + glitchIntensity, j).B;
+                        B = img.GetPixel(i + filterValue, j).B;
                     }
                     else
                     {
                         B = 0;
                     }
 
-                    if (i - glitchIntensity >= 0)
+                    if (i - filterValue >= 0)
                     {
-                        G = img.GetPixel(i - glitchIntensity, j).G;
+                        G = img.GetPixel(i - filterValue, j).G;
                     }
                     else
                     {
@@ -629,7 +743,7 @@ namespace PI_PixelStudio
         }
         private Bitmap Glitch_3(Bitmap img)
         {
-            int glitchIntensity = 8;
+            int filterValue = 8;
             int R, G, B;
 
             for (int j = 0; j < img.Height; j++)
@@ -638,18 +752,18 @@ namespace PI_PixelStudio
                 {
                     B = img.GetPixel(i, j).B;
 
-                    if (i + glitchIntensity < img.Width)
+                    if (i + filterValue < img.Width)
                     {
-                        G = img.GetPixel(i + glitchIntensity, j).G;
+                        G = img.GetPixel(i + filterValue, j).G;
                     }
                     else
                     {
                         G = 0;
                     }
 
-                    if (i - glitchIntensity >= 0)
+                    if (i - filterValue >= 0)
                     {
-                        R = img.GetPixel(i - glitchIntensity, j).R;
+                        R = img.GetPixel(i - filterValue, j).R;
                     }
                     else
                     {

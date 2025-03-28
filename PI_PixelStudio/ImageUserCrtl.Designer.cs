@@ -55,6 +55,10 @@ namespace PI_PixelStudio
             ZoomIn = new Button();
             Open = new Button();
             panel6 = new Panel();
+            Apply = new Button();
+            FilterValueTextBox = new TextBox();
+            ValueName = new Label();
+            FilterManagerPanel = new Panel();
             panel2.SuspendLayout();
             TitlePanel.SuspendLayout();
             FiltersFlowPanel.SuspendLayout();
@@ -71,6 +75,7 @@ namespace PI_PixelStudio
             EditingSpace.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Display).BeginInit();
             ControlBar.SuspendLayout();
+            FilterManagerPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -348,11 +353,64 @@ namespace PI_PixelStudio
             panel6.Size = new Size(200, 100);
             panel6.TabIndex = 3;
             // 
+            // Apply
+            // 
+            Apply.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Apply.BackColor = Color.FromArgb(30, 34, 52);
+            Apply.FlatAppearance.BorderSize = 0;
+            Apply.FlatStyle = FlatStyle.Flat;
+            Apply.Font = new Font("Yu Gothic UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Apply.ForeColor = Color.White;
+            Apply.ImageAlign = ContentAlignment.MiddleRight;
+            Apply.Location = new Point(0, 33);
+            Apply.Name = "Apply";
+            Apply.Size = new Size(266, 28);
+            Apply.TabIndex = 42;
+            Apply.Text = "Apply";
+            Apply.UseVisualStyleBackColor = false;
+            Apply.Click += Apply_Click;
+            // 
+            // FilterValueTextBox
+            // 
+            FilterValueTextBox.BackColor = Color.FromArgb(36, 41, 62);
+            FilterValueTextBox.BorderStyle = BorderStyle.None;
+            FilterValueTextBox.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FilterValueTextBox.ForeColor = Color.WhiteSmoke;
+            FilterValueTextBox.Location = new Point(135, 0);
+            FilterValueTextBox.Name = "FilterValueTextBox";
+            FilterValueTextBox.PlaceholderText = "000";
+            FilterValueTextBox.Size = new Size(131, 22);
+            FilterValueTextBox.TabIndex = 41;
+            FilterValueTextBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // ValueName
+            // 
+            ValueName.AutoSize = true;
+            ValueName.Font = new Font("Yu Gothic UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ValueName.ForeColor = Color.White;
+            ValueName.Location = new Point(0, 0);
+            ValueName.Name = "ValueName";
+            ValueName.Size = new Size(96, 20);
+            ValueName.TabIndex = 40;
+            ValueName.Text = "Value Name:";
+            // 
+            // FilterManagerPanel
+            // 
+            FilterManagerPanel.Controls.Add(FilterValueTextBox);
+            FilterManagerPanel.Controls.Add(Apply);
+            FilterManagerPanel.Controls.Add(ValueName);
+            FilterManagerPanel.Location = new Point(800, 318);
+            FilterManagerPanel.Name = "FilterManagerPanel";
+            FilterManagerPanel.Size = new Size(266, 61);
+            FilterManagerPanel.TabIndex = 43;
+            FilterManagerPanel.Visible = false;
+            // 
             // ImageUserCrtl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
+            Controls.Add(FilterManagerPanel);
             Controls.Add(panel2);
             Controls.Add(Hystogram4);
             Controls.Add(Hystogram3);
@@ -379,6 +437,8 @@ namespace PI_PixelStudio
             EditingSpace.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)Display).EndInit();
             ControlBar.ResumeLayout(false);
+            FilterManagerPanel.ResumeLayout(false);
+            FilterManagerPanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -409,5 +469,9 @@ namespace PI_PixelStudio
         private PictureBox Hystogram_G;
         private PictureBox Hystogram_R;
         private PictureBox Hystogram_RGB;
+        private Button Apply;
+        private TextBox FilterValueTextBox;
+        private Label ValueName;
+        private Panel FilterManagerPanel;
     }
 }
