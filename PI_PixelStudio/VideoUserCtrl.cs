@@ -304,13 +304,13 @@ namespace PI_PixelStudio
             OpenFileDialog chooseFile = new OpenFileDialog();
 
             chooseFile.Title = "Select Media Element";
-            chooseFile.Filter = "Video Files| *.mp4; *.avi; *.wmv; *.mov";//Filter only video formats
+            chooseFile.Filter = "Video Files| *.mp4; *.avi; *.wmv; *.mov";
 
 
             if (chooseFile.ShowDialog() == DialogResult.OK)
             {
                 string filePath = chooseFile.FileName;
-                string fileExtension = Path.GetExtension(filePath).ToLower();//Gets the file extension
+                string fileExtension = Path.GetExtension(filePath).ToLower();
 
                 if (fileExtension == ".mp4" || fileExtension == ".avi" || fileExtension == ".wmv" || fileExtension == ".mov")
                 {
@@ -799,7 +799,7 @@ namespace PI_PixelStudio
                     sumG = 0;
                     sumB = 0;
 
-                    for (iPixel = i; iPixel < (i + filterValue); iPixel++)//Sums the value of a particular set of pixels depending of the Pixel size (gets the Pixel color)
+                    for (iPixel = i; iPixel < (i + filterValue); iPixel++)
                     {
                         for (jPixel = j; jPixel < (j + filterValue); jPixel++)
                         {

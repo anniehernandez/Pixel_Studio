@@ -255,12 +255,12 @@ namespace PI_PixelStudio
 
             chooseFile.Title = "Select Media Element";
 
-            chooseFile.Filter = "Image Files| *.jpg; *.jpeg; *.png; *.bmp; *.gif";//Filter only image formats
+            chooseFile.Filter = "Image Files| *.jpg; *.jpeg; *.png; *.bmp; *.gif";
 
             if (chooseFile.ShowDialog() == DialogResult.OK)
             {
                 string filePath = chooseFile.FileName;
-                string fileExtension = Path.GetExtension(filePath).ToLower();//Gets the file extension
+                string fileExtension = Path.GetExtension(filePath).ToLower();
 
                 if (fileExtension == ".jpg" || fileExtension == ".jpeg" || fileExtension == ".png" || fileExtension == ".bmp" || fileExtension == ".gif")
                 {
