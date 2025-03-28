@@ -1,6 +1,6 @@
 ﻿namespace PI_PixelStudio
 {
-    partial class ProgressBarForm
+    partial class FilterParamForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ProgressBar = new ProgressBar();
-            ProgressLabel = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilterParamForm));
             NavigationPanel = new Panel();
             label2 = new Label();
             pictureBox4 = new PictureBox();
             Minimize = new Button();
             Exit = new Button();
+            ValueName = new Label();
+            FilterValue = new TextBox();
+            Apply = new Button();
             NavigationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
-            // 
-            // ProgressBar
-            // 
-            ProgressBar.Location = new Point(35, 108);
-            ProgressBar.Name = "ProgressBar";
-            ProgressBar.Size = new Size(530, 25);
-            ProgressBar.TabIndex = 0;
-            // 
-            // ProgressLabel
-            // 
-            ProgressLabel.AutoSize = true;
-            ProgressLabel.Font = new Font("Yu Gothic UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ProgressLabel.ForeColor = Color.White;
-            ProgressLabel.Location = new Point(37, 84);
-            ProgressLabel.Name = "ProgressLabel";
-            ProgressLabel.Size = new Size(70, 21);
-            ProgressLabel.TabIndex = 1;
-            ProgressLabel.Text = "Saving...";
             // 
             // NavigationPanel
             // 
@@ -68,15 +52,15 @@
             NavigationPanel.Location = new Point(0, 0);
             NavigationPanel.Name = "NavigationPanel";
             NavigationPanel.Padding = new Padding(5, 0, 0, 0);
-            NavigationPanel.Size = new Size(600, 30);
-            NavigationPanel.TabIndex = 2;
+            NavigationPanel.Size = new Size(280, 30);
+            NavigationPanel.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(32, 7);
+            label2.Location = new Point(37, 7);
             label2.Name = "label2";
             label2.Size = new Size(75, 17);
             label2.TabIndex = 0;
@@ -102,7 +86,7 @@
             Minimize.ForeColor = Color.White;
             Minimize.Image = Properties.Resources.Min;
             Minimize.ImageAlign = ContentAlignment.TopRight;
-            Minimize.Location = new Point(546, 0);
+            Minimize.Location = new Point(226, 0);
             Minimize.Name = "Minimize";
             Minimize.Size = new Size(27, 30);
             Minimize.TabIndex = 6;
@@ -118,25 +102,68 @@
             Exit.ForeColor = Color.White;
             Exit.Image = Properties.Resources.Close;
             Exit.ImageAlign = ContentAlignment.TopRight;
-            Exit.Location = new Point(573, 0);
+            Exit.Location = new Point(253, 0);
             Exit.Name = "Exit";
             Exit.Size = new Size(27, 30);
             Exit.TabIndex = 4;
             Exit.UseVisualStyleBackColor = true;
             Exit.Click += Exit_Click;
             // 
-            // ProgressBarForm
+            // ValueName
+            // 
+            ValueName.AutoSize = true;
+            ValueName.Font = new Font("Yu Gothic UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ValueName.ForeColor = Color.White;
+            ValueName.Location = new Point(42, 62);
+            ValueName.Name = "ValueName";
+            ValueName.Size = new Size(96, 20);
+            ValueName.TabIndex = 4;
+            ValueName.Text = "Value Name:";
+            // 
+            // FilterValue
+            // 
+            FilterValue.BackColor = Color.FromArgb(36, 41, 62);
+            FilterValue.BorderStyle = BorderStyle.None;
+            FilterValue.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FilterValue.ForeColor = Color.WhiteSmoke;
+            FilterValue.Location = new Point(186, 62);
+            FilterValue.Name = "FilterValue";
+            FilterValue.PlaceholderText = "000";
+            FilterValue.Size = new Size(58, 22);
+            FilterValue.TabIndex = 5;
+            FilterValue.TextAlign = HorizontalAlignment.Center;
+            // 
+            // Apply
+            // 
+            Apply.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Apply.BackColor = Color.FromArgb(30, 34, 52);
+            Apply.FlatAppearance.BorderSize = 0;
+            Apply.FlatStyle = FlatStyle.Flat;
+            Apply.Font = new Font("Yu Gothic UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Apply.ForeColor = Color.White;
+            Apply.ImageAlign = ContentAlignment.MiddleRight;
+            Apply.Location = new Point(90, 110);
+            Apply.Name = "Apply";
+            Apply.Size = new Size(100, 28);
+            Apply.TabIndex = 7;
+            Apply.Text = "Apply";
+            Apply.UseVisualStyleBackColor = false;
+            Apply.Click += Apply_Click;
+            // 
+            // FilterParamForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
-            ClientSize = new Size(600, 200);
-            Controls.Add(ProgressLabel);
-            Controls.Add(ProgressBar);
+            ClientSize = new Size(280, 160);
+            Controls.Add(Apply);
+            Controls.Add(FilterValue);
+            Controls.Add(ValueName);
             Controls.Add(NavigationPanel);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "ProgressBarForm";
-            Text = "000";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "FilterParamForm";
+            Text = "FIlterValueForm";
             NavigationPanel.ResumeLayout(false);
             NavigationPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -146,12 +173,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar ProgressBar;
-        private Label ProgressLabel;
         private Panel NavigationPanel;
         private Label label2;
         private PictureBox pictureBox4;
         private Button Minimize;
         private Button Exit;
+        private Label ValueName;
+        private TextBox FilterValue;
+        private Button Apply;
     }
 }
