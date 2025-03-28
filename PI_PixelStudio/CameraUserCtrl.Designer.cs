@@ -43,11 +43,15 @@
             label3 = new Label();
             ColorDisplay = new PictureBox();
             CaptureButton = new Button();
+            label4 = new Label();
+            QTextBox = new TextBox();
+            pictureBox1 = new PictureBox();
             panel2.SuspendLayout();
             CameraImagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CameraImage).BeginInit();
             CameraSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ColorDisplay).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -59,7 +63,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.RightToLeft = RightToLeft.No;
-            panel2.Size = new Size(800, 30);
+            panel2.Size = new Size(718, 30);
             panel2.TabIndex = 0;
             // 
             // SelectCamera
@@ -98,7 +102,7 @@
             CameraImagePanel.Dock = DockStyle.Fill;
             CameraImagePanel.Location = new Point(0, 30);
             CameraImagePanel.Name = "CameraImagePanel";
-            CameraImagePanel.Size = new Size(800, 484);
+            CameraImagePanel.Size = new Size(718, 508);
             CameraImagePanel.TabIndex = 1;
             // 
             // CameraImage
@@ -107,7 +111,7 @@
             CameraImage.Image = Properties.Resources.pic_example;
             CameraImage.Location = new Point(0, 0);
             CameraImage.Name = "CameraImage";
-            CameraImage.Size = new Size(800, 484);
+            CameraImage.Size = new Size(718, 508);
             CameraImage.SizeMode = PictureBoxSizeMode.Zoom;
             CameraImage.TabIndex = 0;
             CameraImage.TabStop = false;
@@ -118,9 +122,9 @@
             CameraSettings.BackColor = Color.FromArgb(36, 41, 62);
             CameraSettings.Controls.Add(CameraImagePanel);
             CameraSettings.Controls.Add(panel2);
-            CameraSettings.Location = new Point(35, 73);
+            CameraSettings.Location = new Point(35, 63);
             CameraSettings.Name = "CameraSettings";
-            CameraSettings.Size = new Size(800, 514);
+            CameraSettings.Size = new Size(718, 538);
             CameraSettings.TabIndex = 0;
             // 
             // HexadecimalTextBox
@@ -130,11 +134,11 @@
             HexadecimalTextBox.BorderStyle = BorderStyle.None;
             HexadecimalTextBox.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold);
             HexadecimalTextBox.ForeColor = Color.White;
-            HexadecimalTextBox.Location = new Point(870, 204);
+            HexadecimalTextBox.Location = new Point(786, 179);
             HexadecimalTextBox.Multiline = true;
             HexadecimalTextBox.Name = "HexadecimalTextBox";
             HexadecimalTextBox.ReadOnly = true;
-            HexadecimalTextBox.Size = new Size(115, 27);
+            HexadecimalTextBox.Size = new Size(198, 27);
             HexadecimalTextBox.TabIndex = 0;
             HexadecimalTextBox.Text = "#000000";
             HexadecimalTextBox.TextAlign = HorizontalAlignment.Center;
@@ -146,11 +150,11 @@
             bTextBox.BorderStyle = BorderStyle.None;
             bTextBox.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold);
             bTextBox.ForeColor = Color.White;
-            bTextBox.Location = new Point(901, 303);
+            bTextBox.Location = new Point(817, 278);
             bTextBox.Multiline = true;
             bTextBox.Name = "bTextBox";
             bTextBox.ReadOnly = true;
-            bTextBox.Size = new Size(84, 27);
+            bTextBox.Size = new Size(167, 27);
             bTextBox.TabIndex = 1;
             bTextBox.Text = "b";
             bTextBox.TextAlign = HorizontalAlignment.Center;
@@ -162,11 +166,11 @@
             aTextBox.BorderStyle = BorderStyle.None;
             aTextBox.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold);
             aTextBox.ForeColor = Color.White;
-            aTextBox.Location = new Point(901, 270);
+            aTextBox.Location = new Point(817, 245);
             aTextBox.Multiline = true;
             aTextBox.Name = "aTextBox";
             aTextBox.ReadOnly = true;
-            aTextBox.Size = new Size(84, 27);
+            aTextBox.Size = new Size(167, 27);
             aTextBox.TabIndex = 2;
             aTextBox.Text = "a";
             aTextBox.TextAlign = HorizontalAlignment.Center;
@@ -178,11 +182,11 @@
             LTextBox.BorderStyle = BorderStyle.None;
             LTextBox.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold);
             LTextBox.ForeColor = Color.White;
-            LTextBox.Location = new Point(901, 237);
+            LTextBox.Location = new Point(817, 212);
             LTextBox.Multiline = true;
             LTextBox.Name = "LTextBox";
             LTextBox.ReadOnly = true;
-            LTextBox.Size = new Size(84, 27);
+            LTextBox.Size = new Size(167, 27);
             LTextBox.TabIndex = 3;
             LTextBox.Text = "L";
             LTextBox.TextAlign = HorizontalAlignment.Center;
@@ -193,7 +197,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(870, 237);
+            label1.Location = new Point(784, 214);
             label1.Name = "label1";
             label1.Size = new Size(25, 25);
             label1.TabIndex = 4;
@@ -205,7 +209,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(869, 270);
+            label2.Location = new Point(785, 247);
             label2.Name = "label2";
             label2.Size = new Size(26, 25);
             label2.TabIndex = 5;
@@ -217,7 +221,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(868, 303);
+            label3.Location = new Point(784, 280);
             label3.Name = "label3";
             label3.Size = new Size(27, 25);
             label3.TabIndex = 6;
@@ -228,10 +232,10 @@
             ColorDisplay.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ColorDisplay.BackColor = Color.FromArgb(36, 41, 62);
             ColorDisplay.BackgroundImageLayout = ImageLayout.Zoom;
-            ColorDisplay.Location = new Point(870, 73);
+            ColorDisplay.Location = new Point(786, 63);
             ColorDisplay.Name = "ColorDisplay";
             ColorDisplay.Padding = new Padding(5);
-            ColorDisplay.Size = new Size(115, 115);
+            ColorDisplay.Size = new Size(200, 100);
             ColorDisplay.SizeMode = PictureBoxSizeMode.Zoom;
             ColorDisplay.TabIndex = 7;
             ColorDisplay.TabStop = false;
@@ -245,21 +249,66 @@
             CaptureButton.Font = new Font("Yu Gothic UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             CaptureButton.ForeColor = Color.White;
             CaptureButton.ImageAlign = ContentAlignment.MiddleRight;
-            CaptureButton.Location = new Point(870, 346);
+            CaptureButton.Location = new Point(784, 570);
             CaptureButton.Name = "CaptureButton";
-            CaptureButton.Size = new Size(117, 30);
+            CaptureButton.Size = new Size(200, 31);
             CaptureButton.TabIndex = 6;
             CaptureButton.Text = "Capture";
             CaptureButton.UseVisualStyleBackColor = false;
             CaptureButton.Click += CaptureButton_Click;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(784, 313);
+            label4.Name = "label4";
+            label4.Size = new Size(30, 25);
+            label4.TabIndex = 10;
+            label4.Text = "Q:";
+            // 
+            // QTextBox
+            // 
+            QTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            QTextBox.BackColor = Color.FromArgb(36, 41, 62);
+            QTextBox.BorderStyle = BorderStyle.None;
+            QTextBox.Font = new Font("Yu Gothic UI", 14.25F, FontStyle.Bold);
+            QTextBox.ForeColor = Color.White;
+            QTextBox.Location = new Point(817, 311);
+            QTextBox.Multiline = true;
+            QTextBox.Name = "QTextBox";
+            QTextBox.ReadOnly = true;
+            QTextBox.Size = new Size(167, 27);
+            QTextBox.TabIndex = 9;
+            QTextBox.Text = "Quadrant";
+            QTextBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox1.BackColor = Color.FromArgb(36, 41, 62);
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.ErrorImage = null;
+            pictureBox1.Location = new Point(784, 354);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Padding = new Padding(5);
+            pictureBox1.Size = new Size(200, 200);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
             // 
             // CameraUserCtrl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
-            Controls.Add(CaptureButton);
+            Controls.Add(label4);
+            Controls.Add(QTextBox);
+            Controls.Add(pictureBox1);
             Controls.Add(ColorDisplay);
+            Controls.Add(CaptureButton);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -275,6 +324,7 @@
             ((System.ComponentModel.ISupportInitialize)CameraImage).EndInit();
             CameraSettings.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)ColorDisplay).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -296,5 +346,8 @@
         private Label label3;
         private PictureBox ColorDisplay;
         private Button CaptureButton;
+        private Label label4;
+        private TextBox QTextBox;
+        private PictureBox pictureBox1;
     }
 }

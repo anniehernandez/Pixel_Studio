@@ -90,12 +90,12 @@ namespace PI_PixelStudio
                         Pen pen = new Pen(Color.Red, 1);
                         g.DrawLine(pen, centerX - 40, centerY, centerX + 40, centerY);
                         g.DrawLine(pen, centerX, centerY - 40, centerX, centerY + 40);
-                        g.DrawRectangle(pen, centerX - boxSize / 2, centerY - boxSize / 2, boxSize, boxSize); 
+                        g.DrawRectangle(pen, centerX - boxSize / 2, centerY - boxSize / 2, boxSize, boxSize);
                     }
 
                     CameraImage.Image = image;
 
-                    if(isCapturing)
+                    if (isCapturing)
                     {
                         GetColor();
                     }
@@ -116,18 +116,60 @@ namespace PI_PixelStudio
 
             Vec3b pixel = labImg.At<Vec3b>(y, x);
 
-            int L = pixel.Item0;
-            int a = pixel.Item1;
-            int b = pixel.Item2;
+            int L = (int)(pixel.Item0 / 2.55);
+            int a = pixel.Item1 - 128;
+            int b = pixel.Item2 - 128;
+
+            if (a > 0)
+            {
+                if (b > 0)
+                {
+                    QTextBox.Text = "Quadrant I";
+                }
+                else
+                {
+                    QTextBox.Text = "Quadrant IV";
+                }
+            }
+            else
+            {
+                if (b > 0)
+                {
+                    QTextBox.Text = "Quadrant II";
+                }
+                else
+                {
+                    QTextBox.Text = "Quadrant III";
+                }
+
+            }
 
             LTextBox.Text = $"{L}";
             aTextBox.Text = $"{a}";
             bTextBox.Text = $"{b}";
 
-            Color colorDisplay = LABtoRGB(L, a, b);
+            Color colorDisplay = LABtoRGB((int)(L * 2.55), a + 128, b + 128);
             ColorDisplay.BackColor = colorDisplay;
+            PlotCIELABColor(a, b);
 
             HexadecimalTextBox.Text = $"#{colorDisplay.R:X2}{colorDisplay.G:X2}{colorDisplay.B:X2}";
+        }
+        private void PlotCIELABColor(float a, float b)
+        {
+            Bitmap labChart = new Bitmap(Properties.Resources.CIELAB1);
+            Graphics g = Graphics.FromImage(labChart);
+
+            int centerX = labChart.Width / 2;
+            int centerY = labChart.Height / 2;
+            int scale = 3;
+
+            int posX = centerX + (int)(a * scale);
+            int posY = centerY - (int)(b * scale);
+
+            Pen pen = new Pen(Color.Red, 3);
+            g.DrawEllipse(pen, posX - 5, posY - 5, 10, 10);
+
+            pictureBox1.Image = labChart;
         }
         private Color LABtoRGB(int L, int A, int B)
         {
@@ -155,6 +197,7 @@ namespace PI_PixelStudio
             {
                 CaptureButton.Text = "Capture";
                 GetColor();
+
                 isCapturing = true;
             }
         }
