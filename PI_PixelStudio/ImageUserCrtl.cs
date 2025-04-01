@@ -44,7 +44,6 @@ namespace PI_PixelStudio
                 new Filters("Glitch 3", Properties.Resources.Glitch_3, 13)
             };
             LoadFilters(filters);
-
         }
         //FILTERS
         public void LoadFilters(List<Filters> filters)
@@ -221,6 +220,7 @@ namespace PI_PixelStudio
                         }
                         SetValueFilter("Glitch Intensity:", filterValue);
                         Display.Image = Glitch_1(img);
+
                         break;
 
                     case 12:
@@ -271,6 +271,8 @@ namespace PI_PixelStudio
 
                     Bitmap img = new Bitmap(originalImage);
 
+                    DisplayOriginal.Image = img;
+
                     RGBHistorgram_Start(img);
                 }
                 else
@@ -286,7 +288,7 @@ namespace PI_PixelStudio
             save.Filter = "Image Files| *.jpg; *.jpeg; *.png; *.bmp; *.gif";//Filter only image formats
             Image img = Display.Image;
 
-            if (img != null)
+            if (img == null)
             {
                 MessageBox.Show("No image loaded!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

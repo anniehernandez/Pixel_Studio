@@ -59,6 +59,7 @@ namespace PI_PixelStudio
             FilterValueTextBox = new TextBox();
             ValueName = new Label();
             FilterManagerPanel = new Panel();
+            DisplayOriginal = new PictureBox();
             panel2.SuspendLayout();
             TitlePanel.SuspendLayout();
             FiltersFlowPanel.SuspendLayout();
@@ -76,6 +77,7 @@ namespace PI_PixelStudio
             ((System.ComponentModel.ISupportInitialize)Display).BeginInit();
             ControlBar.SuspendLayout();
             FilterManagerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DisplayOriginal).BeginInit();
             SuspendLayout();
             // 
             // panel2
@@ -260,7 +262,6 @@ namespace PI_PixelStudio
             // Display
             // 
             Display.Dock = DockStyle.Fill;
-            Display.Image = Properties.Resources.pic_example;
             Display.Location = new Point(0, 30);
             Display.Name = "Display";
             Display.Size = new Size(730, 551);
@@ -396,6 +397,7 @@ namespace PI_PixelStudio
             // 
             // FilterManagerPanel
             // 
+            FilterManagerPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             FilterManagerPanel.Controls.Add(FilterValueTextBox);
             FilterManagerPanel.Controls.Add(Apply);
             FilterManagerPanel.Controls.Add(ValueName);
@@ -405,11 +407,22 @@ namespace PI_PixelStudio
             FilterManagerPanel.TabIndex = 43;
             FilterManagerPanel.Visible = false;
             // 
+            // DisplayOriginal
+            // 
+            DisplayOriginal.BackColor = Color.FromArgb(36, 41, 62);
+            DisplayOriginal.Location = new Point(800, 395);
+            DisplayOriginal.Name = "DisplayOriginal";
+            DisplayOriginal.Size = new Size(266, 221);
+            DisplayOriginal.SizeMode = PictureBoxSizeMode.Zoom;
+            DisplayOriginal.TabIndex = 34;
+            DisplayOriginal.TabStop = false;
+            // 
             // ImageUserCrtl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(46, 51, 73);
+            Controls.Add(DisplayOriginal);
             Controls.Add(FilterManagerPanel);
             Controls.Add(panel2);
             Controls.Add(Hystogram4);
@@ -439,6 +452,7 @@ namespace PI_PixelStudio
             ControlBar.ResumeLayout(false);
             FilterManagerPanel.ResumeLayout(false);
             FilterManagerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DisplayOriginal).EndInit();
             ResumeLayout(false);
         }
 
@@ -473,5 +487,6 @@ namespace PI_PixelStudio
         private TextBox FilterValueTextBox;
         private Label ValueName;
         private Panel FilterManagerPanel;
+        private PictureBox DisplayOriginal;
     }
 }
