@@ -306,6 +306,11 @@ namespace PI_PixelStudio
         //GENERATE HYSTOGRAM
         public void RGBHistorgram_Start(Bitmap img)
         {
+            //Clear hystograms
+            hystogramR = new int[256];
+            hystogramG = new int[256];
+            hystogramB = new int[256];
+
             if (Display.Image == null) return;
 
             for (int y = 0; y < img.Height; y++)
@@ -320,9 +325,9 @@ namespace PI_PixelStudio
                 }
             }
             Hystogram_Draw(Hystogram_RGB, hystogramR, hystogramG, hystogramB);
-            Hystogram_Draw_RGB(Hystogram_R, hystogramR, Color.Red);
-            Hystogram_Draw_RGB(Hystogram_G, hystogramG, Color.Green);
-            Hystogram_Draw_RGB(Hystogram_B, hystogramB, Color.Blue);
+            Hystogram_Draw_RGB(Hystogram_R, hystogramR, Color.Red, 1);
+            Hystogram_Draw_RGB(Hystogram_G, hystogramG, Color.Green, 2);
+            Hystogram_Draw_RGB(Hystogram_B, hystogramB, Color.Blue, 3);
         }
         //DRAW HYSTOGRAMS
         private void Hystogram_Draw(PictureBox pictureBox, int[] hystogramR, int[] hystogramG, int[] hystogramB)//RGB
@@ -355,7 +360,7 @@ namespace PI_PixelStudio
 
             pictureBox.Image = hystogramImg;
         }
-        private void Hystogram_Draw_RGB(PictureBox pictureBox, int[] hystogram, Color color)//RGB
+        private void Hystogram_Draw_RGB(PictureBox pictureBox, int[] hystogram, Color color, int colorId)//RGB
         {
             int pictureBoxW = pictureBox.Width;
             int pictureBoxH = pictureBox.Height;
@@ -364,7 +369,19 @@ namespace PI_PixelStudio
 
             Graphics g = Graphics.FromImage(hystogramImg);
 
-            int max = Math.Max(Math.Max(hystogramR.Max(), hystogramG.Max()), hystogramB.Max());
+            int max = 0;
+            switch (colorId)
+            {
+                case 1:
+                    max = hystogramR.Max();
+                    break;
+                case 2:
+                    max = hystogramG.Max();
+                    break;
+                case 3:
+                    max = hystogramB.Max();
+                    break;
+            }
 
             if (max == 0) return;
 
@@ -381,47 +398,6 @@ namespace PI_PixelStudio
 
             pictureBox.Image = hystogramImg;
         }
-
-        #region Paint Hystograms
-        private void Hystogram1_Paint(object sender, PaintEventArgs e)//RGB
-        {
-            Graphics g = e.Graphics;
-            Pen penAxis = new Pen(Color.White);
-
-            g.DrawLine(penAxis, 4, 126, 126, 126);
-            g.DrawLine(penAxis, 4, 126, 4, 4);
-        }
-        private void Hystogram2_Paint(object sender, PaintEventArgs e)//R
-        {
-            Graphics g = e.Graphics;
-            Pen penAxis = new Pen(Color.Red);
-
-            g.DrawLine(penAxis, 4, 126, 126, 126);
-            g.DrawLine(penAxis, 4, 126, 4, 4);
-        }
-        private void Hystogram3_Paint(object sender, PaintEventArgs e)//G
-        {
-            Graphics g = e.Graphics;
-            Pen penAxis = new Pen(Color.Green);
-
-            g.DrawLine(penAxis, 4, 126, 126, 126);
-            g.DrawLine(penAxis, 4, 126, 4, 4);
-        }
-        private void Hystogram4_Paint(object sender, PaintEventArgs e)//B
-        {
-            Graphics g = e.Graphics;
-            Pen penAxis = new Pen(Color.Blue);
-
-            g.DrawLine(penAxis, 4, 126, 126, 126);
-            g.DrawLine(penAxis, 4, 126, 4, 4);
-
-            //for (int i = 0; i < 256; i++)
-            //{
-            //    g.DrawLine(penBlue, i + 20, 121, i + 20, 121 - hystogramB[i]);
-            //}
-        }
-        #endregion
-
         #endregion
         #region FILTERS
         //FILTERS

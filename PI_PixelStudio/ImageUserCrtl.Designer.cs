@@ -165,7 +165,6 @@ namespace PI_PixelStudio
             Hystogram4.Name = "Hystogram4";
             Hystogram4.Size = new Size(131, 131);
             Hystogram4.TabIndex = 25;
-            Hystogram4.Paint += Hystogram4_Paint;
             // 
             // Hystogram_B
             // 
@@ -184,7 +183,6 @@ namespace PI_PixelStudio
             Hystogram3.Name = "Hystogram3";
             Hystogram3.Size = new Size(131, 131);
             Hystogram3.TabIndex = 26;
-            Hystogram3.Paint += Hystogram3_Paint;
             // 
             // Hystogram_G
             // 
@@ -205,7 +203,6 @@ namespace PI_PixelStudio
             Hystogram2.Name = "Hystogram2";
             Hystogram2.Size = new Size(131, 131);
             Hystogram2.TabIndex = 27;
-            Hystogram2.Paint += Hystogram2_Paint;
             // 
             // Hystogram_R
             // 
@@ -238,7 +235,6 @@ namespace PI_PixelStudio
             Hystogram1.Name = "Hystogram1";
             Hystogram1.Size = new Size(131, 131);
             Hystogram1.TabIndex = 28;
-            Hystogram1.Paint += Hystogram1_Paint;
             // 
             // Hystogram_RGB
             // 
@@ -409,6 +405,7 @@ namespace PI_PixelStudio
             // 
             // DisplayOriginal
             // 
+            DisplayOriginal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             DisplayOriginal.BackColor = Color.FromArgb(36, 41, 62);
             DisplayOriginal.Location = new Point(800, 395);
             DisplayOriginal.Name = "DisplayOriginal";
