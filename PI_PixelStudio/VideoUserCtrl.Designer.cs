@@ -165,7 +165,6 @@
             Hystogram4.Name = "Hystogram4";
             Hystogram4.Size = new Size(131, 131);
             Hystogram4.TabIndex = 31;
-            Hystogram4.Paint += Hystogram4_Paint;
             // 
             // Hystogram_B
             // 
@@ -184,7 +183,6 @@
             Hystogram3.Name = "Hystogram3";
             Hystogram3.Size = new Size(131, 131);
             Hystogram3.TabIndex = 32;
-            Hystogram3.Paint += Hystogram3_Paint;
             // 
             // Hystogram_G
             // 
@@ -205,7 +203,6 @@
             Hystogram2.Name = "Hystogram2";
             Hystogram2.Size = new Size(131, 131);
             Hystogram2.TabIndex = 33;
-            Hystogram2.Paint += Hystogram2_Paint;
             // 
             // Hystogram_R
             // 
@@ -238,7 +235,6 @@
             Hystogram1.Name = "Hystogram1";
             Hystogram1.Size = new Size(131, 131);
             Hystogram1.TabIndex = 34;
-            Hystogram1.Paint += Hystogram1_Paint;
             // 
             // Hystogram_RGB
             // 
@@ -421,6 +417,7 @@
             // 
             // FilterManagerPanel
             // 
+            FilterManagerPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             FilterManagerPanel.Controls.Add(FilterValueTextBox);
             FilterManagerPanel.Controls.Add(Apply);
             FilterManagerPanel.Controls.Add(ValueName);
