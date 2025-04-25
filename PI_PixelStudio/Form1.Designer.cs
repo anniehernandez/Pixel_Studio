@@ -48,8 +48,7 @@ namespace PI_PixelStudio
             Maximize = new Button();
             Exit = new Button();
             ContainerPanel = new Panel();
-            pictureBox3 = new 
-                ();
+            pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
