@@ -255,7 +255,7 @@
             CaptureButton.TabIndex = 6;
             CaptureButton.Text = "Capture";
             CaptureButton.UseVisualStyleBackColor = false;
-            CaptureButton.Click += CaptureButton_Click;
+            CaptureButton.Visible = false;
             // 
             // label4
             // 

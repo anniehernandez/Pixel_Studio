@@ -22,6 +22,8 @@ namespace PI_PixelStudio
         public CameraUserCtrl()
         {
             InitializeComponent();
+            CameraImage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CameraImage_Click);
+
             GetCameras();
         }
         private void GetCameras()
@@ -64,6 +66,8 @@ namespace PI_PixelStudio
                 Application.Idle -= ProcessFrame;
                 capture.Release();
                 CameraImage.Image = null;
+                frame = null;
+                image = null;
 
                 OpenCloseCamera.Image = Properties.Resources.open_camera;
                 isOpen = false;
@@ -81,38 +85,26 @@ namespace PI_PixelStudio
                 {
                     image = BitmapConverter.ToBitmap(frame);
 
-                    using (Graphics g = Graphics.FromImage(image))
-                    {
-                        int centerX = frame.Width / 2;
-                        int centerY = frame.Height / 2;
-                        int boxSize = 50;
-
-                        Pen pen = new Pen(Color.Red, 1);
-                        g.DrawLine(pen, centerX - 40, centerY, centerX + 40, centerY);
-                        g.DrawLine(pen, centerX, centerY - 40, centerX, centerY + 40);
-                        g.DrawRectangle(pen, centerX - boxSize / 2, centerY - boxSize / 2, boxSize, boxSize);
-                    }
-
                     CameraImage.Image = image;
-
-                    if (isCapturing)
-                    {
-                        GetColor();
-                    }
                 }
             }
         }
-
-        private void GetColor()
+        private void CameraImage_Click(object sender, MouseEventArgs e)
         {
-            if (frame == null || frame.Empty()) return;
+            if (image == null) return;
+
+            float scaleX = (float)image.Width / CameraImage.Width;
+            float scaleY = (float)image.Height / CameraImage.Height;
+
+            int x = (int)(e.X * scaleX);
+            int y = (int)(e.Y * scaleY);
+
+            if (x < 0 || x >= image.Width || y < 0 || y >= image.Height) return;
+
+            Color pixelColor = image.GetPixel(x, y);
 
             Mat labImg = new Mat();
-
             Cv2.CvtColor(frame, labImg, ColorConversionCodes.BGR2Lab);
-
-            int x = labImg.Width / 2;
-            int y = labImg.Height / 2;
 
             Vec3b pixel = labImg.At<Vec3b>(y, x);
 
@@ -141,7 +133,6 @@ namespace PI_PixelStudio
                 {
                     QTextBox.Text = "Quadrant III";
                 }
-
             }
 
             LTextBox.Text = $"{L}";
@@ -185,21 +176,6 @@ namespace PI_PixelStudio
             bgrMat.Dispose();
 
             return rgbColor;
-        }
-        private void CaptureButton_Click(object sender, EventArgs e)
-        {
-            if (isCapturing)
-            {
-                CaptureButton.Text = "Let Go";
-                isCapturing = false;
-            }
-            else
-            {
-                CaptureButton.Text = "Capture";
-                GetColor();
-
-                isCapturing = true;
-            }
         }
     }
 }
