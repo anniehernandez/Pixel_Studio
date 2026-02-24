@@ -374,8 +374,6 @@ namespace PI_PixelStudio
                 Display.Image?.Dispose();
                 Display.Image = resizedFrame.ToBitmap();
 
-
-
                 Display.Image = ApplyFilter(activeFilter, resizedFrame.ToBitmap());
                 RGBHistorgram_Start(resizedFrame.ToBitmap());
             }
