@@ -111,7 +111,7 @@
             // 
             // DownloadDoc
             // 
-            DownloadDoc.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            DownloadDoc.Anchor = AnchorStyles.Top;
             DownloadDoc.BackColor = Color.FromArgb(30, 34, 52);
             DownloadDoc.FlatAppearance.BorderSize = 0;
             DownloadDoc.FlatStyle = FlatStyle.Flat;
