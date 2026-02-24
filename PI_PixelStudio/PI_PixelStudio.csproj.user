@@ -22,9 +22,6 @@
     <Compile Update="UserManualUserCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="VideoEditing.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="VideoUserCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
