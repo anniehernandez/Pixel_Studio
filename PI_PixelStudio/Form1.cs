@@ -104,6 +104,7 @@ namespace PI_PixelStudio{
         {
             ContainerPanel.Controls.Clear();
             ContainerPanel.Controls.Add(pictureBox3);
+            ActiveBar.Visible = false;
         }
     }
 }
