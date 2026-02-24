@@ -18,7 +18,6 @@ namespace PI_PixelStudio
         private Mat frame;
         private Bitmap image;
         private bool isOpen = false;
-        private bool isCapturing = false;
         public CameraUserCtrl()
         {
             InitializeComponent();
@@ -59,7 +58,6 @@ namespace PI_PixelStudio
 
                 OpenCloseCamera.Image = Properties.Resources.close_camera;
                 isOpen = true;
-                isCapturing = true;
             }
             else
             {
@@ -71,7 +69,6 @@ namespace PI_PixelStudio
 
                 OpenCloseCamera.Image = Properties.Resources.open_camera;
                 isOpen = false;
-                isCapturing = false;
             }
         }
         private void ProcessFrame(object sender, EventArgs e)
