@@ -30,12 +30,13 @@ namespace PI_PixelStudio
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PixelStudio));
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            ButtonActive = new FlowLayoutPanel();
+            ActiveBar = new Panel();
             CameraButton = new Button();
-            FiltersButton = new Button();
-            EffectsButton = new Button();
+            VideoButton = new Button();
+            ImageButton = new Button();
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
             NavigationPanel = new Panel();
@@ -71,10 +72,10 @@ namespace PI_PixelStudio
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(36, 41, 62);
-            panel1.Controls.Add(ButtonActive);
+            panel1.Controls.Add(ActiveBar);
             panel1.Controls.Add(CameraButton);
-            panel1.Controls.Add(FiltersButton);
-            panel1.Controls.Add(EffectsButton);
+            panel1.Controls.Add(VideoButton);
+            panel1.Controls.Add(ImageButton);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -82,14 +83,13 @@ namespace PI_PixelStudio
             panel1.Size = new Size(200, 860);
             panel1.TabIndex = 0;
             // 
-            // ButtonActive
+            // ActiveBar
             // 
-            ButtonActive.BackColor = Color.FromArgb(113, 109, 214);
-            ButtonActive.Location = new Point(0, 160);
-            ButtonActive.Name = "ButtonActive";
-            ButtonActive.Size = new Size(7, 107);
-            ButtonActive.TabIndex = 1;
-            ButtonActive.Visible = false;
+            ActiveBar.BackColor = Color.FromArgb(113, 109, 214);
+            ActiveBar.Location = new Point(0, 161);
+            ActiveBar.Name = "ActiveBar";
+            ActiveBar.Size = new Size(7, 108);
+            ActiveBar.TabIndex = 2;
             // 
             // CameraButton
             // 
@@ -98,52 +98,52 @@ namespace PI_PixelStudio
             CameraButton.FlatStyle = FlatStyle.Flat;
             CameraButton.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CameraButton.ForeColor = Color.White;
-            CameraButton.Image = Properties.Resources.mdi_camera;
+            CameraButton.Image = Properties.Resources.Camera;
             CameraButton.ImageAlign = ContentAlignment.TopRight;
             CameraButton.Location = new Point(0, 233);
             CameraButton.Name = "CameraButton";
             CameraButton.Padding = new Padding(0, 0, 10, 0);
             CameraButton.Size = new Size(200, 36);
-            CameraButton.TabIndex = 3;
+            CameraButton.TabIndex = 4;
             CameraButton.Text = "Camera";
             CameraButton.UseVisualStyleBackColor = true;
             CameraButton.Click += CameraButton_Click;
             // 
-            // FiltersButton
+            // VideoButton
             // 
-            FiltersButton.Dock = DockStyle.Top;
-            FiltersButton.FlatAppearance.BorderSize = 0;
-            FiltersButton.FlatStyle = FlatStyle.Flat;
-            FiltersButton.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FiltersButton.ForeColor = Color.White;
-            FiltersButton.Image = Properties.Resources.streamline_magic_wand_2_solid;
-            FiltersButton.ImageAlign = ContentAlignment.TopRight;
-            FiltersButton.Location = new Point(0, 197);
-            FiltersButton.Name = "FiltersButton";
-            FiltersButton.Padding = new Padding(0, 0, 10, 0);
-            FiltersButton.Size = new Size(200, 36);
-            FiltersButton.TabIndex = 2;
-            FiltersButton.Text = "Filters";
-            FiltersButton.UseVisualStyleBackColor = true;
-            FiltersButton.Click += FiltersButton_Click;
+            VideoButton.Dock = DockStyle.Top;
+            VideoButton.FlatAppearance.BorderSize = 0;
+            VideoButton.FlatStyle = FlatStyle.Flat;
+            VideoButton.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            VideoButton.ForeColor = Color.White;
+            VideoButton.Image = Properties.Resources.VideoCamera;
+            VideoButton.ImageAlign = ContentAlignment.TopRight;
+            VideoButton.Location = new Point(0, 197);
+            VideoButton.Name = "VideoButton";
+            VideoButton.Padding = new Padding(0, 0, 10, 0);
+            VideoButton.Size = new Size(200, 36);
+            VideoButton.TabIndex = 3;
+            VideoButton.Text = "Video";
+            VideoButton.UseVisualStyleBackColor = true;
+            VideoButton.Click += VideoButton_Click;
             // 
-            // EffectsButton
+            // ImageButton
             // 
-            EffectsButton.Dock = DockStyle.Top;
-            EffectsButton.FlatAppearance.BorderSize = 0;
-            EffectsButton.FlatStyle = FlatStyle.Flat;
-            EffectsButton.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            EffectsButton.ForeColor = Color.White;
-            EffectsButton.Image = Properties.Resources.solar_star_fall_bold;
-            EffectsButton.ImageAlign = ContentAlignment.TopRight;
-            EffectsButton.Location = new Point(0, 161);
-            EffectsButton.Name = "EffectsButton";
-            EffectsButton.Padding = new Padding(0, 0, 10, 0);
-            EffectsButton.Size = new Size(200, 36);
-            EffectsButton.TabIndex = 1;
-            EffectsButton.Text = "Effects";
-            EffectsButton.UseVisualStyleBackColor = true;
-            EffectsButton.Click += EffectsButton_Click;
+            ImageButton.Dock = DockStyle.Top;
+            ImageButton.FlatAppearance.BorderSize = 0;
+            ImageButton.FlatStyle = FlatStyle.Flat;
+            ImageButton.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ImageButton.ForeColor = Color.White;
+            ImageButton.Image = Properties.Resources.PictureBox;
+            ImageButton.ImageAlign = ContentAlignment.TopRight;
+            ImageButton.Location = new Point(0, 161);
+            ImageButton.Name = "ImageButton";
+            ImageButton.Padding = new Padding(0, 0, 10, 0);
+            ImageButton.Size = new Size(200, 36);
+            ImageButton.TabIndex = 2;
+            ImageButton.Text = "Image";
+            ImageButton.UseVisualStyleBackColor = true;
+            ImageButton.Click += ImageButton_Click;
             // 
             // panel2
             // 
@@ -199,6 +199,7 @@ namespace PI_PixelStudio
             label1.Size = new Size(75, 17);
             label1.TabIndex = 0;
             label1.Text = "PixelStudio";
+            label1.Click += label1_Click;
             // 
             // pictureBox4
             // 
@@ -306,7 +307,7 @@ namespace PI_PixelStudio
             Controls.Add(panel1);
             Font = new Font("Yu Gothic UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Location = new Point(0, 50);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PixelStudio";
             Text = "PixelStudio";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -328,9 +329,8 @@ namespace PI_PixelStudio
         private Panel panel2;
         private PictureBox pictureBox2;
         private Panel NavigationPanel;
-        private Button EffectsButton;
-        private Button CameraButton;
-        private Button FiltersButton;
+        private Button VideoButton;
+        private Button ImageButton;
         private Button Minimize;
         private Button Maximize;
         private Button Exit;
@@ -338,8 +338,9 @@ namespace PI_PixelStudio
         private PictureBox pictureBox4;
         private Label label1;
         private Panel panel8;
-        private FlowLayoutPanel ButtonActive;
         private Panel ContainerPanel;
         private PictureBox pictureBox3;
+        private Button CameraButton;
+        private Panel ActiveBar;
     }
 }

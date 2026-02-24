@@ -25,31 +25,105 @@ C:\Users\luish\source\repos\PI_PixelStudio\PI_PixelStudio\obj\Debug\net8.0-windo
 C:\Users\luish\source\repos\PI_PixelStudio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.csproj.ResolveComReference.cache
 C:\Users\luish\source\repos\PI_PixelStudio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.ImageEditing.resources
 C:\Users\luish\source\repos\PI_PixelStudio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.VideoEditing.resources
+<<<<<<< HEAD
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\PI_PixelStudio.exe
+=======
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\Resources\PixelStudio_Documentation.pdf
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\PI_PixelStudio.exe
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\PI_PixelStudio.dll.config
+>>>>>>> Annie_dev
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\PI_PixelStudio.deps.json
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\PI_PixelStudio.runtimeconfig.json
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\PI_PixelStudio.dll
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\PI_PixelStudio.pdb
+<<<<<<< HEAD
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\Interop.WMPLib.dll
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\AxInterop.WMPLib.dll
+=======
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\Emgu.CV.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\Emgu.CV.Bitmap.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\Emgu.CV.UI.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\OpenCvSharp.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\OpenCvSharp.Extensions.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\System.Drawing.Common.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\System.Private.Windows.Core.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\System.Text.Encodings.Web.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\System.Text.Json.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-arm64\native\cvextern.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x64\native\cvextern.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x64\native\libusb-1.0.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x64\native\opencv_videoio_ffmpeg4100_64.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x86\native\cvextern.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x86\native\libusb-1.0.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x86\native\opencv_videoio_ffmpeg4100.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-arm64\native\concrt140.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msvcp140.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msvcp140_1.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msvcp140_2.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msvcp140_atomic_wait.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msvcp140_codecvt_ids.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-arm64\native\vcruntime140.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-arm64\native\vcruntime140_1.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x64\native\concrt140.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x64\native\msvcp140.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x64\native\msvcp140_1.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x64\native\msvcp140_2.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x64\native\msvcp140_atomic_wait.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x64\native\msvcp140_codecvt_ids.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x64\native\vcruntime140.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x64\native\vcruntime140_1.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x86\native\concrt140.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x86\native\msvcp140.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x86\native\msvcp140_1.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x86\native\msvcp140_2.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x86\native\msvcp140_atomic_wait.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x86\native\msvcp140_codecvt_ids.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x86\native\vcruntime140.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x64\native\OpenCvSharpExtern.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\win-x86\native\OpenCvSharpExtern.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\Interop.WMPLib.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\bin\Debug\net8.0-windows\AxInterop.WMPLib.dll
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.csproj.AssemblyReference.cache
+>>>>>>> Annie_dev
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\Interop.WMPLib.dll
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\AxInterop.WMPLib.dll
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.csproj.ResolveComReference.cache
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.CameraUserCtrl.resources
+<<<<<<< HEAD
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.FiltersUserCrtl.resources
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.PixelStudio.resources
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.ImageEditing.resources
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.Properties.Resources.resources
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.UserManualUserCtrl.resources
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.VideoEditing.resources
+=======
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.PixelStudio.resources
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.ImageUserCrtl.resources
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.ProgressBarForm.resources
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.Properties.Resources.resources
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.UserManualUserCtrl.resources
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.VideoUserCtrl.resources
+>>>>>>> Annie_dev
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.csproj.GenerateResource.cache
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.AssemblyInfoInputs.cache
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.AssemblyInfo.cs
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.csproj.CoreCompileInputs.cache
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.sourcelink.json
+<<<<<<< HEAD
+=======
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_Pixel.C2754A1F.Up2Date
+>>>>>>> Annie_dev
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.dll
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\refint\PI_PixelStudio.dll
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.pdb
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.genruntimeconfig.cache
 C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\ref\PI_PixelStudio.dll
+<<<<<<< HEAD
+=======
+C:\Users\luish\source\repos\Pixel_Studio\PI_PixelStudio\obj\Debug\net8.0-windows\PI_PixelStudio.FilterParamForm.resources
+>>>>>>> Annie_dev

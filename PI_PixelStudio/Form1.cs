@@ -11,6 +11,8 @@ namespace PI_PixelStudio{
             NavigationPanel.MouseDown += Window_MouseDown;
             NavigationPanel.MouseMove += Window_MouseMove;
             NavigationPanel.MouseUp += Window_MouseUp;
+
+            ActiveBar.Visible = false;
         }
         //WINDOW DRAGGING
         private void Window_MouseDown(object sender, MouseEventArgs e)
@@ -69,37 +71,40 @@ namespace PI_PixelStudio{
         }
 
         //MENU BUTTONS
-        private void EffectsButton_Click(object sender, EventArgs e)
+        private void ImageButton_Click(object sender, EventArgs e)
         {
-            var LoadEffects = new FiltersUserCrtl();
-            LoadUserCtrl(LoadEffects);//Load Respective Panel (In this case The Effects UserCtrl/Panel idk same shit (well not but u know what i mean))
-            LoadEffects.LoadSection(1);
+            LoadUserCtrl(new ImageUserCrtl());//Load Respective Panel  
 
-            ButtonActive.Visible = true;
-            ButtonActive.Height = EffectsButton.Height;
-            ButtonActive.Top = EffectsButton.Top;
-            ButtonActive.Left = EffectsButton.Left;
+            ActiveBar.Visible = true;
+            ActiveBar.Height = ImageButton.Height;
+            ActiveBar.Top = ImageButton.Top;
+            ActiveBar.Left = ImageButton.Left;
         }
-        private void FiltersButton_Click(object sender, EventArgs e)
+        private void VideoButton_Click(object sender, EventArgs e)
         {
-            var LoadFilters = new FiltersUserCrtl();
-            LoadUserCtrl(LoadFilters);//Load Respective Panel (In this case The Effects UserCtrl/Panel idk same shit (well not but u know what i mean))
-            LoadFilters.LoadSection(0);
+            LoadUserCtrl(new VideoUserCtrl());//Load Respective Panel  
 
-            ButtonActive.Visible = true;
-            ButtonActive.Height = FiltersButton.Height;
-            ButtonActive.Top = FiltersButton.Top;
-            ButtonActive.Left = FiltersButton.Left;
+            ActiveBar.Visible = true;
+            ActiveBar.Height = VideoButton.Height;
+            ActiveBar.Top = VideoButton.Top;
+            ActiveBar.Left = VideoButton.Left;
         }
+
         private void CameraButton_Click(object sender, EventArgs e)
         {
-            LoadUserCtrl(new CameraUserCtrl());//Load Respective Panel (In this case The Effects UserCtrl/Panel idk same shit (well not but u know what i mean))
+            LoadUserCtrl(new CameraUserCtrl());//Load Respective Panel  
 
-            ButtonActive.Visible = true;
-            ButtonActive.Height = CameraButton.Height;
-            ButtonActive.Top = CameraButton.Top;
-            ButtonActive.Left = CameraButton.Left;
+            ActiveBar.Visible = true;
+            ActiveBar.Height = CameraButton.Height;
+            ActiveBar.Top = CameraButton.Top;
+            ActiveBar.Left = CameraButton.Left;
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            ContainerPanel.Controls.Clear();
+            ContainerPanel.Controls.Add(pictureBox3);
+            ActiveBar.Visible = false;
+        }
     }
 }
